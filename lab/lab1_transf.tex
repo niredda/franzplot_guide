@@ -1,0 +1,187 @@
+\documentclass{beamer}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+\usetheme{boxes}
+\newcommand{\fig}{figures}
+
+
+\title[Curve e Sup. - Lab 1]{Curve e Superfici per il Design \\ Laboratorio - 1}
+\author[Prof. Scotti]{Prof. Anna Scotti}
+%\institute[dimat]{Long Inst.}
+\date{X Marzo 2019}
+
+\begin{document}
+\begin{frame}
+\maketitle
+\end{frame}
+\section{Trasformazioni}
+\input{transf_list.tex}
+%\begin{frame}
+%\frametitle{Matrici in POVRay}
+%\end{frame}
+
+\section{Esercizi}
+\begin{frame}
+\frametitle{Esercizio 1}
+\begin{itemize}
+\item Disegnare un cilindro con asse parallelo ad y, raggio 0.4, altezza 1.
+\item Effettuare uno scaling con $S_x =2$, $S_y=1$, $S_z=0.5$.
+\item Traslare l'oggetto ottenuto di un vettore a scelta parallelo ad y.
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Esercizio 1}
+\begin{center}
+\begin{tikzpicture}
+\node(img1){\includegraphics[width=0.7\textwidth]{\fig/es2-1.png}};
+\node(img2) at (img1.north west){\includegraphics[width=0.4\textwidth]{\fig/es2-1sol.png}};
+\end{tikzpicture}
+\end{center}
+\end{frame}
+\begin{frame}
+\frametitle{Esercizio 2}
+\begin{itemize}
+\item Disegnare un  cubo centrato sull'origine, con lati di misura 2.
+\item Applicare al cubo la seguente matrice: 
+\begin{displaymath}
+A = \begin{bmatrix}
+    1 & 1 & 0\\
+    0 & 1 & 0\\
+    0 & 0 & 1
+    \end{bmatrix}
+\end{displaymath}
+\item Di che trasformazione si tratta? Qual'\`e il volume del cubo deformato?
+\end{itemize}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Esercizio 2}
+\begin{center}
+\begin{tikzpicture}
+\node(img3){\includegraphics[width=0.7\textwidth]{\fig/es2-2.png}};
+\node(img4) at (img3.south west){\includegraphics[width=0.4\textwidth]{\fig/es2-2sol.png}};
+\end{tikzpicture}
+\end{center}
+\end{frame}
+% INCLUDERE LE MACRO
+\begin{frame}
+\frametitle{Esercizio 3: Macro ed include}
+\begin{itemize}
+\item Creare l'oggetto `dice' definito come macro nel file `dice.inc' incluso nella cartella `Materiale Povray'. 
+\end{itemize}
+%\begin{columns}
+%  \begin{column}{0.48\textwidth}
+%    \texttt{{\footnotesize
+%    \#include "colors.inc"  \\
+%    \#include "dice.inc"  \\
+%    \dbbslsh Robe di povray \\
+%    object\{
+%    dice(\textless 0,0,0 \textgreater,Red)\\
+%    scale(0.5)
+%    \}}
+%    }
+%  \end{column}
+%  \begin{column}{0.48\textwidth}
+%    \includegraphics[width=0.8\textwidth]{\fig/testdado.png}
+%  \end{column}
+%\end{columns}
+\end{frame}
+%%%
+\begin{frame}
+\frametitle {Esercizio 4-I}
+\begin{itemize}
+\item Utilizzare l'oggetto `dado' creato in precedenza.
+\item Traslare il centro dell'oggetto in   $\langle 2,1,0\rangle$ [utilizzando
+\texttt{translate<2,1,0>} all'interno delle parentesi in cui \`e chiamato
+l'oggetto (dopo la riga con \texttt{scale(0.5)})].  
+\item Riflettere l'oggetto rispetto
+al piano con normale $\textbf{N}=[1,1,0]^T$.
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle {Esercizio 4-II}
+Come prima cosa, occorre normalizzare $\textbf{N}$.
+\begin{displaymath}
+\sqrt{\mathbf{N} \cdot \mathbf{N}} =\sqrt{ N_x^2+N_y^2+N_z^2}=\frac{\sqrt{2}}{2}
+\end{displaymath}
+Applicando la formula per la trasformazione di `proiezione':
+\begin{displaymath}
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\ 
+0 & 0 & 1 
+\end{bmatrix}
+- 2~ \left(\frac{\sqrt{2}}{2}\right)^2
+\begin{bmatrix}
+1 \\
+1 \\ 
+0 
+\end{bmatrix}
+\begin{bmatrix}
+1 & 1 &  0
+\end{bmatrix}
+= 
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\ 
+0 & 0 & 1 
+\end{bmatrix}
+-
+\begin{bmatrix}
+1 & 1 & 0 \\
+1 & 1 & 0 \\ 
+0 & 0 & 0 
+\end{bmatrix}
+\end{displaymath}
+{\color[rgb]{0.1,0,1}
+\begin{displaymath}
+=
+\begin{bmatrix}
+0  & -1 & 0 \\
+-1 &  0 & 0 \\ 
+0  &  0 & 1 
+\end{bmatrix}
+\end{displaymath}
+}
+
+\end{frame}
+\begin{frame}
+\frametitle{Esercizio 4-III}
+\begin{center}
+\begin{tikzpicture}
+\node(img1){\includegraphics[width=0.7\textwidth]{\fig/testdado_reflection_diag.png}};
+%\node(img2) at (img1.north west){\includegraphics[width=0.4\textwidth]{\fig/snapcode_3-3.png}};
+\end{tikzpicture}
+\end{center}
+\end{frame}
+\begin{frame}
+\frametitle{Esercizio 4-IV}
+\begin{center}
+\begin{tikzpicture}
+\node(img1){\includegraphics[width=0.7\textwidth]{\fig/testdado_reflection_z.png}};
+%\node(img2) at (img1.north west){\includegraphics[width=0.4\textwidth]{\fig/snapcode_3-3.png}};
+\end{tikzpicture}
+\end{center}
+\end{frame}
+\begin{frame}
+\frametitle{Per Casa: Proiezioni ortogonali}
+\begin{columns}
+\begin{column}{0.32\textwidth}
+\includegraphics[width=\textwidth]{\fig/proj1.png}
+\end{column}
+\begin{column}{0.32\textwidth}
+\includegraphics[width=\textwidth]{\fig/proj2.png}
+\end{column}
+\begin{column}{0.32\textwidth}
+\includegraphics[width=\textwidth]{\fig/proj3.png}
+\end{column}
+\end{columns}
+\vspace{20pt}
+Creare un'organizzazione di oggetti le cui proiezioni sui piani cartesiani riproducono le figure sovrastanti.
+\end{frame}
+
+\end{document}
+
