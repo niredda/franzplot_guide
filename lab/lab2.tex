@@ -22,13 +22,14 @@
 Nella cartella su beep con il materiale di oggi troverete:
 \begin{itemize}
 \item Questa presentazione (\texttt{lab2.pdf});
-\item Il file \texttt{es\_dado\_ref.toml} con l'esercizio risolto della passata esercitazione.
+%\item Il file \texttt{es\_dado\_ref.toml} con l'esercizio risolto della passata esercitazione.
 \end{itemize}
-Nella cartella `Materiale Laboratorio' (sempre su Beep) troverete:
+Nella cartella \texttt{Materiale\_Laboratorio} (sempre su Beep) troverete:
 \begin{itemize}
 \item Un riferimento con indicate le trasformazioni (Rotazione, scaling taglio etc.): \texttt{trasformazioni\_ref.pdf};
-\item Eventuali pdf con risoluzioni di esercizi ed esercizi risolti
+\item Eventuali pdf con risoluzioni di esercizi.
 \end{itemize}
+La versione eseguibile per windows di \frnzplt \`e scaricabile dalla cartella \texttt{FranzPlot-DCS}
 \end{frame}
 \begin{frame}
 \frametitle{Coordinate omogenee}
@@ -55,16 +56,16 @@ a_{31}x + a_{32}y + a_{33}z + t_3 \\
 \section{Esercizi}
 %
 \begin{frame}
-\frametitle{Esercizio 1 - I}
+\frametitle{Esercizio 1}
 \begin{itemize}
-\item Disegnare un cilindro con asse parallelo a z, raggio 0.6, altezza 1 e centro di una base nell'origine.
+\item Disegnare un cilindro con asse parallelo a z, raggio 0.3, altezza 1 e centro di una base nell'origine.
 \item Ruotare l'oggetto cos\`i ottenuto di $60^\circ$ intorno all'asse y e traslarlo di un vettore 
-$( 1,0,1)$, calcolando la corrispondente matrice di trasformazione composta.
+$[1,0,1]^T$, calcolando la corrispondente matrice di trasformazione composta.
 \item Applicare rotazione e traslazione invertendo l'ordine e provare che la composizione non commuta.
 \end{itemize}
 \end{frame}
 \begin{frame}
-\frametitle{Esercizio 1 - II}
+\frametitle{Esercizio 1 - i}
 \begin{center}
 \begin{tikzpicture}
 \node(img1){\includegraphics[width=0.6\textwidth]{\fig/l2_es1_c.jpeg}};
@@ -76,18 +77,18 @@ $( 1,0,1)$, calcolando la corrispondente matrice di trasformazione composta.
 \end{frame}
 
 \begin{frame}
-\frametitle {Esercizio 2-I}
+\frametitle {Esercizio 2}
 \begin{itemize}
 \item Creare un oggetto 'dado' utilizzando il comando Primitive, con fattore di
-scala 0.5 e traslare il centro dell'oggetto in   $( 2,1,0)^T$. 
-\item Ruotare l'oggetto di 180 gradi rispetto all'asse $\langle -1,1,0 \rangle$.
+scala 0.5 e traslare il centro dell'oggetto in   $[ 2,1,0]^T$. 
+\item Ruotare l'oggetto di 180 gradi rispetto all'asse $[ -1,1,0 ]^T$.
 \item Rappresentare il dado, il dado ruotato e l'asse di rotazione con \frnzplt
-\item Che differenze si osservano tra il risultato di questo esercizio con il precedente?
+\item Confrontare il risultato di questo esercizio con quello della riflessione del dado del laboratorio 1 (Es. 4).
 
 \end{itemize}
 \end{frame}
 \begin{frame}
-\frametitle{ Esercizio 2-II}
+\frametitle{ Esercizio 2 - i}
 La caratteristica principale di questo esercizio \`e di richiedere una
 rotazione su un asse che non corrisponde ad uno dei tre assi cartesiani, e del
 quale, quindi, non abbiamo a disposizione una formula in
@@ -101,19 +102,19 @@ comporre tre rotazioni:
 \end{enumerate}
 \end{frame}
 \begin{frame}
-\frametitle{Esercizio 2-III}
+\frametitle{Esercizio 2 - ii}
 \begin{itemize}
 \item L'asse di rotazione giace sul piano $xy$ ed il suo angolo con l'asse y,
 calcolabile utilizzando le definizioni del prodotto scalare, \`e di
--45$^\circ$.  
-\item Si tratta quindi di eseguire una rotazione di -45$^\circ$ rispetto a z,
-una rotazione di 180$^\circ$ rispetto ad y, ed infine di ruotare di 45$^\circ$ di nuovo
+45$^\circ$.  
+\item Si tratta quindi di eseguire una rotazione di -45$^\circ$ (quindi in senso orario) rispetto a z,
+una rotazione di 180$^\circ$ rispetto ad y, ed infine di ruotare di 45$^\circ$ (questa volta in senso antiorario) di nuovo
 rispetto a z.  
 \end{itemize}
-Utilizzando le definizioni che abbiamo a disposizione otteniamo:
+Utilizzando le definizioni che abbiamo a disposizione ed esprimendo gli angoli in termini di radianti otteniamo:
 %
 \begin{displaymath}
-R(180^\circ)_{(1,1,0)}= R(-45^\circ)_z~R(180^\circ)_y~R(45^\circ)=
+R(180^\circ)_{(-1,1,0)}= R(\frac{\pi}{4})_z~R(\pi)_y~R(\frac{\pi}{4})=
 \end{displaymath}
 \begin{displaymath}
 \begin{bmatrix}
@@ -123,8 +124,8 @@ R(180^\circ)_{(1,1,0)}= R(-45^\circ)_z~R(180^\circ)_y~R(45^\circ)=
 \end{bmatrix}
 \begin{bmatrix}
 -1  & 0   & 0 \\
-0   & -1  & 0 \\ 
-0   &  0  & 1 
+0   & 1  & 0 \\ 
+0   &  0  & -1 
 \end{bmatrix}
 \begin{bmatrix}
 \frac{\sqrt{2}}{2}  & \frac{\sqrt{2}}{2} & 0 \\
@@ -143,7 +144,7 @@ R(180^\circ)_{(1,1,0)}= R(-45^\circ)_z~R(180^\circ)_y~R(45^\circ)=
 \end{frame}
 
 \begin{frame}
-\frametitle{Esercizio 2-iv}
+\frametitle{Esercizio 2-iii}
 \begin{center}
 \begin{tikzpicture}
 \node(img1){\includegraphics[width=0.7\textwidth]{\fig/l2_es2_dadorot.jpeg}};
@@ -170,7 +171,7 @@ considerino la matrice di scaling $\mathcal{S}$ con $S_x=2$ $S_y=1$ ed $S_z =0.5
 \end{itemize}
 \end{frame}
 \begin{frame}
-\frametitle{Esercizio 3}
+\frametitle{Esercizio 3 - i}
 \includegraphics[width=0.9\textwidth]{\fig/l2_es3.jpeg}
 \end{frame}
 %

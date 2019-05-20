@@ -1,5 +1,13 @@
 \documentclass{article}
 \usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage[top=0.5in, bottom=0.75in, left=0.5in, right=0.5in]{geometry}
+\usetikzlibrary{matrix}
+\newcommand{\fig}{figures} % common figure path
+\newcommand{\frnzplt}{FranzPlot }
 \title{Franzplot-DCS}
 \author{F. C., D. R., A. S.}
 \begin{document}
@@ -9,8 +17,25 @@
 \section{Introduction}\label{s:intro}
 \section{Technical aspects}\label{s:tech_asp}
 \section{The top bar}\label{s:top_bar}
+
+
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=0.9\textwidth]{\fig/topbar.jpeg}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+        \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+        %\node[] (lab1) at (0.62,0.65) {1};
+    \end{scope}
+\end{tikzpicture}
+\begin{figure}
+\includegraphics[width=\textwidth]{\fig/topbar.jpeg}
+\caption{\label{fig:topbar}}
+\end{figure}
 In attesa di un termine pi\'u adatto
 \section{The top menu}\label{s:top_menu}
+\begin{figure}
+\includegraphics[width=0.4\textwidth]{\fig/topmenu.jpeg}
+\caption{\label{fig:topmenu}}
+\end{figure}
 Come sopra
 \section{The graph menu}\label{s:graph_menu}
 \subsection{Geometries}\label{ss:geometries}
@@ -33,5 +58,6 @@ Come sopra
 \subsection{Vector}\label{ss:vector}
 \subsection{Geometry renderer}\label{ss:geo_rend}
 \subsection{Vector renderer}\label{ss:vec_rend}
-\section{examples}\label{s:examples}
+\section{Examples}\label{s:examples}
+\section{Trouble Shooting}\label{s:trouble_shooting}
 \end{document}
