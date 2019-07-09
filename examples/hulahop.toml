@@ -1,0 +1,54 @@
+[nodes]
+	[nodes.6]
+		position = [488.00003051757812, 514.00000000000000]
+		row_2 = "sin(2*t), cos(3*t)*cos(2*t), -sin(3*t)*cos(2*t), 0"
+		row_4 = "0, 0, 0, 1"
+		type = "time_transform"
+		row_1 = "cos(2*t), -cos(3*t)*sin(2*t), sin(3*t)*sin(2*t), 0"
+		row_3 = "0, sin(3*t), cos(3*t), 0"
+	[nodes.5]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [812.00000000000000, 364.00000000000000]
+		[[nodes.5.inputs]]
+			geometry = "4"
+		[[nodes.5.inputs]]
+			time_transform = "6"
+	[nodes.0]
+		fz = "0"
+		fy = "2*sin(x)"
+		fx = "2*cos(x)"
+		type = "curve"
+		position = [388.00000000000000, 168.00000000000000]
+		[[nodes.0.inputs]]
+			interval = "1"
+	[nodes.4]
+		fz = "2*cos(s)"
+		fy = "0"
+		fx = "2*sin(s)"
+		type = "curve"
+		position = [398.00003051757812, 359.00000000000000]
+		[[nodes.4.inputs]]
+			interval = "3"
+	[nodes.1]
+		position = [118.99999237060547, 177.00000000000000]
+		end = "2*pi"
+		type = "interval"
+		parameter = "x"
+		subdivisions = 74
+		begin = "0"
+	[nodes.2]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [704.00000000000000, 157.00000000000000]
+		[[nodes.2.inputs]]
+			geometry = "0"
+	[nodes.3]
+		position = [118.99999237060547, 349.00000000000000]
+		end = "2*pi"
+		type = "interval"
+		parameter = "s"
+		subdivisions = 79
+		begin = "0"

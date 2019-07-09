@@ -1,0 +1,110 @@
+[nodes]
+	[nodes.19]
+		position = [-163.00000000000000, 857.00000000000000]
+		row_2 = "0, 0.2, 0, 0"
+		row_4 = "0, 0, 0, 1"
+		type = "matrix"
+		row_1 = "0.2, 0, 0, -1.65"
+		row_3 = "0, 0, 0.2, 0.5"
+	[nodes.17]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [582.00000000000000, 779.00000000000000]
+		[[nodes.17.inputs]]
+			geometry = "14"
+		[[nodes.17.inputs]]
+			time_transform = "13"
+	[nodes.14]
+		type = "transform"
+		position = [193.00000000000000, 692.00000000000000]
+		[[nodes.14.inputs]]
+			geometry = "11"
+		[[nodes.14.inputs]]
+			matrix = "19"
+	[nodes.10]
+		position = [302.00003051757812, 543.00000000000000]
+		end = "2*pi"
+		type = "interval"
+		parameter = "x"
+		subdivisions = 32
+		begin = "0"
+	[nodes.7]
+		z = "0"
+		y = "0"
+		x = "1"
+		type = "point"
+		position = [-115.00000000000000, 395.00000000000000]
+	[nodes.2]
+		type = "transform"
+		position = [413.00003051757812, 127.00000000000000]
+		[[nodes.2.inputs]]
+			geometry = "4"
+		[[nodes.2.inputs]]
+			matrix = "3"
+	[nodes.1]
+		color = [1.0000000000000000, 0.0000000000000000, 0.0000000000000000]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [908.00000000000000, 189.00000000000000]
+		[[nodes.1.inputs]]
+			geometry = "8"
+	[nodes.8]
+		type = "transform"
+		position = [657.00000000000000, 130.00000000000000]
+		[[nodes.8.inputs]]
+			geometry = "2"
+		[[nodes.8.inputs]]
+			matrix = "9"
+	[nodes.5]
+		z = "0"
+		y = "0"
+		x = "0"
+		type = "point"
+		position = [-85.000000000000000, 117.00000000000000]
+	[nodes.13]
+		position = [257.00003051757812, 906.00000000000000]
+		row_2 = "-sin(t*pi), cos(t*pi), 0, 0"
+		row_4 = "0, 0, 0, 1"
+		type = "time_transform"
+		row_1 = "cos(t*pi), sin(t*pi), 0, 0"
+		row_3 = "0, 0, 1, 0"
+	[nodes.3]
+		position = [284.00000000000000, 366.00000000000000]
+		row_2 = "0, 1, 0, 0"
+		row_4 = "0, 0, 0, 1"
+		type = "matrix"
+		row_1 = "1, 0, 0, -2"
+		row_3 = "0, 0, 1, 0"
+	[nodes.11]
+		size = "1"
+		kind = "sphere"
+		type = "primitive"
+		position = [-129.00000000000000, 710.00000000000000]
+	[nodes.9]
+		position = [682.00000000000000, 346.00000000000000]
+		row_2 = "sin(x), cos(x), 0, 0"
+		row_4 = "0, 0, 0, 1"
+		type = "matrix"
+		row_1 = "cos(x), -sin(x), 0, 0"
+		row_3 = "0, 0, 1, 0"
+		[[nodes.9.inputs]]
+			interval = "10"
+	[nodes.4]
+		subdivisions = 32
+		type = "bezier"
+		position = [197.00000000000000, 152.00000000000000]
+		[[nodes.4.inputs]]
+			P0 = "5"
+		[[nodes.4.inputs]]
+			P1 = "6"
+		[[nodes.4.inputs]]
+			P2 = "5"
+		[[nodes.4.inputs]]
+			P3 = "7"
+	[nodes.6]
+		z = "2"
+		y = "1"
+		x = "0"
+		type = "point"
+		position = [-140.00000000000000, 282.00000000000000]

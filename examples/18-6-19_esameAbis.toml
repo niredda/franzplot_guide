@@ -1,0 +1,66 @@
+[nodes]
+	[nodes.4]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [873.00000000000000, 145.00000000000000]
+		[[nodes.4.inputs]]
+			geometry = "0"
+	[nodes.0]
+		fz = "0"
+		fy = "0.5*sin(u)"
+		fx = "u"
+		type = "curve"
+		position = [481.00003051757812, 146.00000000000000]
+		[[nodes.0.inputs]]
+			interval = "2"
+	[nodes.3]
+		position = [142.00000000000000, 312.00000000000000]
+		end = "2*pi"
+		type = "interval"
+		parameter = "v"
+		subdivisions = 252
+		begin = "0"
+	[nodes.7]
+		color = [0.0000000000000000, 0.11274510622024536, 0.082900784909725189]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [956.00000000000000, 701.00000000000000]
+		[[nodes.7.inputs]]
+			geometry = "6"
+	[nodes.2]
+		position = [164.00000000000000, 135.00000000000000]
+		end = "2*pi"
+		type = "interval"
+		parameter = "u"
+		subdivisions = 252
+		begin = "0"
+	[nodes.1]
+		fz = "-u*sin(v)"
+		fy = "0.5*sin(u)"
+		fx = "u*cos(v)"
+		type = "surface"
+		position = [473.00003051757812, 508.00000000000000]
+		[[nodes.1.inputs]]
+			first_interval = "2"
+		[[nodes.1.inputs]]
+			second_interval = "3"
+	[nodes.5]
+		color = [0.75000000000000000, 0.0000000000000000, 0.0000000000000000]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [917.00000000000000, 522.00000000000000]
+		[[nodes.5.inputs]]
+			geometry = "1"
+	[nodes.8]
+		parameter = "u"
+		type = "value"
+		value = "0.5*pi"
+		position = [427.00003051757812, 722.00000000000000]
+	[nodes.6]
+		type = "sample"
+		position = [696.00000000000000, 679.00000000000000]
+		[[nodes.6.inputs]]
+			geometry = "1"
+		[[nodes.6.inputs]]
+			value = "8"

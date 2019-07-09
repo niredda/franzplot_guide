@@ -1,0 +1,164 @@
+[nodes]
+	[nodes.22]
+		angle = "1.7*pi"
+		type = "rotation_matrix"
+		axis = "y"
+		position = [507.00003051757812, 1030.0000000000000]
+	[nodes.5]
+		z = "1"
+		y = "0"
+		x = "0"
+		type = "vector"
+		position = [129.00000000000000, 462.00000000000000]
+	[nodes.1]
+		color = [9.9999999747524271e-7, 9.9998999303352321e-7, 9.9998999303352321e-7]
+		thickness = 0.10000000149011612
+		type = "vector_renderer"
+		position = [575.00000000000000, 313.00000000000000]
+		[[nodes.1.inputs]]
+			app_point = "6"
+		[[nodes.1.inputs]]
+			vector = "4"
+	[nodes.25]
+		z = "0"
+		y = "0"
+		x = "0"
+		type = "point"
+		position = [243.00000000000000, 1695.0000000000000]
+	[nodes.12]
+		position = [121.99998474121094, 933.00000000000000]
+		end = "1.7*pi"
+		type = "interval"
+		parameter = "u"
+		subdivisions = 32
+		begin = "0"
+	[nodes.18]
+		type = "translation_matrix"
+		position = [495.00000000000000, 1321.0000000000000]
+		[[nodes.18.inputs]]
+			vector = "20"
+	[nodes.13]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [709.00000000000000, 773.00000000000000]
+		[[nodes.13.inputs]]
+			geometry = "11"
+	[nodes.3]
+		z = "0"
+		y = "0"
+		x = "1"
+		type = "vector"
+		position = [97.000000000000000, 128.00000000000000]
+	[nodes.26]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "vector_renderer"
+		position = [676.00000000000000, 1849.0000000000000]
+		[[nodes.26.inputs]]
+			app_point = "25"
+		[[nodes.26.inputs]]
+			vector = "27"
+	[nodes.24]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "vector_renderer"
+		position = [652.00000000000000, 1621.0000000000000]
+		[[nodes.24.inputs]]
+			app_point = "25"
+		[[nodes.24.inputs]]
+			vector = "23"
+	[nodes.17]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [1048.0000000000000, 1135.0000000000000]
+		[[nodes.17.inputs]]
+			geometry = "21"
+	[nodes.16]
+		type = "transform"
+		position = [496.00003051757812, 1148.0000000000000]
+		[[nodes.16.inputs]]
+			geometry = "14"
+		[[nodes.16.inputs]]
+			matrix = "15"
+	[nodes.19]
+		type = "transform"
+		position = [723.00000000000000, 1324.0000000000000]
+		[[nodes.19.inputs]]
+			geometry = "16"
+		[[nodes.19.inputs]]
+			matrix = "18"
+	[nodes.15]
+		angle = "-pi"
+		type = "rotation_matrix"
+		axis = "y"
+		position = [179.00003051757812, 1256.0000000000000]
+	[nodes.14]
+		size = "0.2"
+		kind = "cone"
+		type = "primitive"
+		position = [150.00000000000000, 1151.0000000000000]
+	[nodes.2]
+		color = [9.9999999747524271e-7, 9.9998999303352321e-7, 9.9998999303352321e-7]
+		thickness = 0.10000000149011612
+		type = "vector_renderer"
+		position = [570.00000000000000, 480.00000000000000]
+		[[nodes.2.inputs]]
+			app_point = "6"
+		[[nodes.2.inputs]]
+			vector = "5"
+	[nodes.20]
+		z = "0"
+		y = "1"
+		x = "0.5"
+		type = "vector"
+		position = [206.00000000000000, 1369.0000000000000]
+	[nodes.6]
+		z = "0"
+		y = "0"
+		x = "0"
+		type = "point"
+		position = [131.00000000000000, 599.00000000000000]
+	[nodes.23]
+		z = "-sin(0.12*pi)"
+		y = "0"
+		x = "cos(0.12*pi)"
+		type = "vector"
+		position = [252.00000000000000, 1543.0000000000000]
+	[nodes.27]
+		z = "cos(0.12*pi)"
+		y = "0"
+		x = "sin(0.12*pi)"
+		type = "vector"
+		position = [280.00000000000000, 1870.0000000000000]
+	[nodes.11]
+		fz = "-0.5*sin(u)"
+		fy = "1"
+		fx = "0.5*cos(u)"
+		type = "curve"
+		position = [379.00000000000000, 769.00000000000000]
+		[[nodes.11.inputs]]
+			interval = "12"
+	[nodes.4]
+		z = "0"
+		y = "1"
+		x = "0"
+		type = "vector"
+		position = [117.00000000000000, 313.00000000000000]
+	[nodes.21]
+		type = "transform"
+		position = [835.00000000000000, 1080.0000000000000]
+		[[nodes.21.inputs]]
+			geometry = "19"
+		[[nodes.21.inputs]]
+			matrix = "22"
+	[nodes.0]
+		color = [9.9999999747524271e-7, 9.9998999303352321e-7, 9.9998999303352321e-7]
+		thickness = 0.10000000149011612
+		type = "vector_renderer"
+		position = [493.00003051757812, 123.00000000000000]
+		[[nodes.0.inputs]]
+			app_point = "6"
+		[[nodes.0.inputs]]
+			vector = "3"

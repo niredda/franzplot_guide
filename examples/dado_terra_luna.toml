@@ -1,0 +1,52 @@
+[nodes]
+	[nodes.7]
+		position = [383.00003051757812, 752.00000000000000]
+		row_2 = "0, 1, 0, 0"
+		row_4 = "0, 0, 0, 1"
+		type = "time_transform"
+		row_1 = "1, 0, 0, 0"
+		row_3 = "0, 0, 1, 0"
+	[nodes.2]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [788.00000000000000, 160.00000000000000]
+		[[nodes.2.inputs]]
+			geometry = "0"
+		[[nodes.2.inputs]]
+			time_transform = "3"
+	[nodes.0]
+		size = "0.5"
+		kind = "dice"
+		type = "primitive"
+		position = [141.00000000000000, 412.00000000000000]
+	[nodes.4]
+		color = [0.16337916254997253, 0.89215683937072754, 0.0043733040802180767]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [772.00000000000000, 418.00000000000000]
+		[[nodes.4.inputs]]
+			geometry = "0"
+		[[nodes.4.inputs]]
+			time_transform = "5"
+	[nodes.3]
+		position = [293.00003051757812, 207.00000000000000]
+		row_2 = "sin(0.1*2*pi*t)*cos(2*pi*t)+cos(0.1*2*pi*t)*sin(2*pi*t), -sin(0.1*2*pi*t)*sin(2*pi*t)+cos(0.1*2*pi*t)*cos(2*pi*t), 0, sin(0.1*2*pi*t)(1*cos(2*pi*t)+4)+cos(0.1*2*pi*t)*1*sin(2*pi*t)"
+		row_4 = "0, 0, 0, 1"
+		type = "time_transform"
+		row_1 = "cos(0.1*2*pi*t)*cos(2*pi*t)-sin(0.1*2*pi*t)*sin(2*pi*t), -cos(0.1*2*pi*t)*sin(2*pi*t)-sin(0.1*2*pi*t)*cos(2*pi*t), 0, cos(0.1*2*pi*t)*(1*cos(2*pi*t)+4)-1*sin(0.1*2*pi*t)*sin(2*pi*t)"
+		row_3 = "0, 0, 1, 0"
+	[nodes.5]
+		position = [249.00000000000000, 568.00000000000000]
+		row_2 = "0, 1, 0, 0"
+		row_4 = "0, 0, 0, 1"
+		type = "time_transform"
+		row_1 = "1, 0, 0, 0"
+		row_3 = "0, 0, 1, 0"
+	[nodes.6]
+		color = [1.0000000000000000, 0.97936695814132690, 0.30882352590560913]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [788.00000000000000, 691.00000000000000]
+		[[nodes.6.inputs]]
+			geometry = "0"

@@ -1,0 +1,53 @@
+[nodes]
+	[nodes.7]
+		position = [138.00000000000000, 412.00000000000000]
+		end = "2*pi"
+		type = "interval"
+		parameter = "w"
+		subdivisions = 162
+		begin = "0"
+	[nodes.5]
+		type = "transform"
+		position = [818.00000000000000, 350.00000000000000]
+		[[nodes.5.inputs]]
+			geometry = "0"
+		[[nodes.5.inputs]]
+			matrix = "4"
+	[nodes.0]
+		fz = "0"
+		fy = "0.5*s"
+		fx = "s"
+		type = "curve"
+		position = [505.00000000000000, 204.00000000000000]
+		[[nodes.0.inputs]]
+			interval = "1"
+	[nodes.4]
+		position = [489.00003051757812, 421.00000000000000]
+		row_2 = "sin(w), cos(w), 0, 0"
+		row_4 = "0, 0, 0, 1"
+		type = "matrix"
+		row_1 = "cos(w), -sin(w), 0, 0"
+		row_3 = "0, 0, 1, 0"
+		[[nodes.4.inputs]]
+			interval = "7"
+	[nodes.1]
+		position = [168.00000000000000, 215.00000000000000]
+		end = "2"
+		type = "interval"
+		parameter = "s"
+		subdivisions = 32
+		begin = "-2"
+	[nodes.2]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [847.00000000000000, 200.00000000000000]
+		[[nodes.2.inputs]]
+			geometry = "0"
+	[nodes.6]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [1087.0000000000000, 366.00000000000000]
+		[[nodes.6.inputs]]
+			geometry = "5"

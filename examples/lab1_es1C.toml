@@ -1,0 +1,90 @@
+[nodes]
+	[nodes.10]
+		color = [0.95098036527633667, 0.0000000000000000, 5.7136308896588162e-5]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [1058.0000000000000, 842.00000000000000]
+		[[nodes.10.inputs]]
+			geometry = "8"
+	[nodes.7]
+		type = "transform"
+		position = [802.00000000000000, 646.00000000000000]
+		[[nodes.7.inputs]]
+			geometry = "2"
+		[[nodes.7.inputs]]
+			matrix = "11"
+	[nodes.12]
+		position = [463.00003051757812, 881.00000000000000]
+		row_2 = "0, 1, 0, 0"
+		row_4 = "0, 0, 0, 1"
+		type = "matrix"
+		row_1 = "0.5, 0, sqrt(3)*0.5, 1"
+		row_3 = "-sqrt(3)*0.5, 0, 0.5, 1"
+	[nodes.6]
+		color = [0.054065797477960587, 0.61274510622024536, 0.0000000000000000]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [1028.0000000000000, 472.00000000000000]
+		[[nodes.6.inputs]]
+			geometry = "4"
+	[nodes.8]
+		type = "transform"
+		position = [804.00000000000000, 820.00000000000000]
+		[[nodes.8.inputs]]
+			geometry = "2"
+		[[nodes.8.inputs]]
+			matrix = "12"
+	[nodes.5]
+		position = [462.00003051757812, 512.00000000000000]
+		row_2 = "0, 1, 0, 0"
+		row_4 = "0, 0, 0, 1"
+		type = "matrix"
+		row_1 = "0.5, 0, sqrt(3)*0.5, 0"
+		row_3 = "-sqrt(3)*0.5, 0, 0.5, 0"
+	[nodes.0]
+		size = "1"
+		kind = "cylinder"
+		type = "primitive"
+		position = [239.00003051757812, 159.00000000000000]
+	[nodes.11]
+		position = [459.00003051757812, 694.00000000000000]
+		row_2 = "0, 1, 0, 0"
+		row_4 = "0, 0, 0, 1"
+		type = "matrix"
+		row_1 = "0.5, 0, sqrt(3)*0.5, 0.5*(1+sqrt(3))"
+		row_3 = "-sqrt(3)*0.5, 0, 0.5, 0.5*(1-sqrt(3))"
+	[nodes.9]
+		color = [1.0000000000000000, 0.99999994039535522, 0.0000000000000000]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [1043.0000000000000, 672.00000000000000]
+		[[nodes.9.inputs]]
+			geometry = "7"
+	[nodes.4]
+		type = "transform"
+		position = [812.00000000000000, 372.00000000000000]
+		[[nodes.4.inputs]]
+			geometry = "2"
+		[[nodes.4.inputs]]
+			matrix = "5"
+	[nodes.1]
+		position = [302.00003051757812, 345.00000000000000]
+		row_2 = "0, 0.6, 0, 0"
+		row_4 = "0, 0, 0, 1"
+		type = "matrix"
+		row_1 = "0.6, 0, 0, 0"
+		row_3 = "0, 0, 1, 0.5"
+	[nodes.2]
+		type = "transform"
+		position = [562.00000000000000, 165.00000000000000]
+		[[nodes.2.inputs]]
+			geometry = "0"
+		[[nodes.2.inputs]]
+			matrix = "1"
+	[nodes.3]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [844.00000000000000, 201.00000000000000]
+		[[nodes.3.inputs]]
+			geometry = "2"

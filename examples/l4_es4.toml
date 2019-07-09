@@ -1,0 +1,153 @@
+[nodes]
+	[nodes.1]
+		fz = "-2*w"
+		fy = "w-0.5"
+		fx = "3*w-0.5"
+		type = "curve"
+		position = [435.00003051757812, 229.00000000000000]
+		[[nodes.1.inputs]]
+			interval = "0"
+	[nodes.12]
+		z = "0"
+		y = "-0.5"
+		x = "-0.5"
+		type = "point"
+		position = [132.00000000000000, 1213.0000000000000]
+	[nodes.22]
+		fz = "-v-2"
+		fy = "0.5"
+		fx = "v+2.5"
+		type = "curve"
+		position = [526.00000000000000, 1957.0000000000000]
+		[[nodes.22.inputs]]
+			interval = "21"
+	[nodes.5]
+		color = [0.0000000000000000, 0.73962622880935669, 0.83823525905609131]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [843.00000000000000, 427.00000000000000]
+		[[nodes.5.inputs]]
+			geometry = "2"
+	[nodes.0]
+		position = [148.00000000000000, 485.00000000000000]
+		end = "30"
+		type = "interval"
+		parameter = "w"
+		subdivisions = 32
+		begin = "-30"
+	[nodes.11]
+		type = "plane"
+		position = [390.00000000000000, 1230.0000000000000]
+		[[nodes.11.inputs]]
+			P0 = "12"
+		[[nodes.11.inputs]]
+			normal = "13"
+	[nodes.7]
+		type = "plane"
+		position = [409.00000000000000, 871.00000000000000]
+		[[nodes.7.inputs]]
+			P0 = "8"
+		[[nodes.7.inputs]]
+			normal = "9"
+	[nodes.10]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [813.00000000000000, 904.00000000000000]
+		[[nodes.10.inputs]]
+			geometry = "7"
+	[nodes.2]
+		fz = "-w+5+10"
+		fy = "4+2.5-4.5"
+		fx = "w+3-1.5-14.5"
+		type = "curve"
+		position = [441.00003051757812, 441.00000000000000]
+		[[nodes.2.inputs]]
+			interval = "0"
+	[nodes.14]
+		color = [1.0000000000000000, 0.0000000000000000, 0.97014999389648438]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [774.00000000000000, 1261.0000000000000]
+		[[nodes.14.inputs]]
+			geometry = "11"
+	[nodes.15]
+		z = "-5"
+		y = "2"
+		x = "7"
+		type = "point"
+		position = [170.00000000000000, 1606.0000000000000]
+	[nodes.19]
+		color = [0.89215683937072754, 0.52479809522628784, 0.0000000000000000]
+		thickness = 0.37999999523162842
+		type = "renderer"
+		position = [777.00000000000000, 61.000000000000000]
+		[[nodes.19.inputs]]
+			geometry = "20"
+	[nodes.16]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.25999999046325684
+		type = "renderer"
+		position = [576.00000000000000, 1662.0000000000000]
+		[[nodes.16.inputs]]
+			geometry = "15"
+	[nodes.3]
+		fz = "2*w -2"
+		fy = "w-2+2.5"
+		fx = "w+3-1.5"
+		type = "curve"
+		position = [431.00003051757812, 656.00000000000000]
+		[[nodes.3.inputs]]
+			interval = "0"
+	[nodes.13]
+		z = "-1"
+		y = "1"
+		x = "-1"
+		type = "vector"
+		position = [111.00000000000000, 1396.0000000000000]
+	[nodes.23]
+		color = [0.99998998641967773, 1.0000000000000000, 0.99999850988388062]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [838.00000000000000, 1950.0000000000000]
+		[[nodes.23.inputs]]
+			geometry = "22"
+	[nodes.8]
+		z = "0"
+		y = "0"
+		x = "1"
+		type = "point"
+		position = [152.00000000000000, 900.00000000000000]
+	[nodes.20]
+		z = "-2"
+		y = "0.5"
+		x = "2.5"
+		type = "point"
+		position = [364.00000000000000, 75.000000000000000]
+	[nodes.6]
+		color = [0.80882346630096436, 0.83333331346511841, 0.0000000000000000]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [818.00000000000000, 651.00000000000000]
+		[[nodes.6.inputs]]
+			geometry = "3"
+	[nodes.21]
+		position = [234.00003051757812, 1948.0000000000000]
+		end = "30"
+		type = "interval"
+		parameter = "v"
+		subdivisions = 32
+		begin = "-30"
+	[nodes.4]
+		color = [0.88235294818878174, 0.0000000000000000, 0.0000000000000000]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [827.00000000000000, 229.00000000000000]
+		[[nodes.4.inputs]]
+			geometry = "1"
+	[nodes.9]
+		z = "1"
+		y = "1"
+		x = "1"
+		type = "vector"
+		position = [117.99998474121094, 1073.0000000000000]

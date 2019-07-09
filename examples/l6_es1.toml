@@ -1,0 +1,57 @@
+[nodes]
+	[nodes.7]
+		color = [1.0000000000000000, 0.0000000000000000, 0.0000000000000000]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [1133.0000000000000, 368.00000000000000]
+		[[nodes.7.inputs]]
+			geometry = "6"
+	[nodes.6]
+		subdivisions = 32
+		type = "bezier"
+		position = [820.00000000000000, 380.00000000000000]
+		[[nodes.6.inputs]]
+			P0 = "0"
+		[[nodes.6.inputs]]
+			P1 = "1"
+		[[nodes.6.inputs]]
+			P2 = "2"
+	[nodes.0]
+		z = "0"
+		y = "0"
+		x = "0"
+		type = "point"
+		position = [227.00000000000000, 135.00000000000000]
+	[nodes.4]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.33000001311302185
+		type = "renderer"
+		position = [535.00000000000000, 227.00000000000000]
+		[[nodes.4.inputs]]
+			geometry = "1"
+	[nodes.5]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.33000001311302185
+		type = "renderer"
+		position = [489.00003051757812, 608.00000000000000]
+		[[nodes.5.inputs]]
+			geometry = "2"
+	[nodes.3]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.33000001311302185
+		type = "renderer"
+		position = [524.00000000000000, 59.000000000000000]
+		[[nodes.3.inputs]]
+			geometry = "0"
+	[nodes.1]
+		z = "3"
+		y = "0"
+		x = "1"
+		type = "point"
+		position = [226.00000000000000, 316.00000000000000]
+	[nodes.2]
+		z = "1"
+		y = "0"
+		x = "2"
+		type = "point"
+		position = [238.00000000000000, 499.00000000000000]

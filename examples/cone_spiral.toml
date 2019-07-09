@@ -1,0 +1,35 @@
+[nodes]
+	[nodes.3]
+		position = [209.00000000000000, 414.00000000000000]
+		end = "0.5"
+		type = "interval"
+		parameter = "x"
+		subdivisions = 252
+		begin = "-0.5"
+	[nodes.2]
+		fz = "x"
+		fy = "0.5*(0.5-x)*cos(7*2*pi*x)"
+		fx = "0.5*(0.5-x)*sin(7*2*pi*x)"
+		type = "curve"
+		position = [495.00003051757812, 406.00000000000000]
+		[[nodes.2.inputs]]
+			interval = "3"
+	[nodes.4]
+		color = [0.90686273574829102, 0.79858070611953735, 0.0000000000000000]
+		thickness = 0.059999998658895493
+		type = "renderer"
+		position = [815.00000000000000, 432.00000000000000]
+		[[nodes.4.inputs]]
+			geometry = "2"
+	[nodes.0]
+		size = "1"
+		kind = "cone"
+		type = "primitive"
+		position = [400.00003051757812, 254.00000000000000]
+	[nodes.1]
+		color = [0.0010092285228893161, 0.0035174784716218710, 0.029411792755126953]
+		thickness = 0.0099999997764825821
+		type = "renderer"
+		position = [816.00000000000000, 271.00000000000000]
+		[[nodes.1.inputs]]
+			geometry = "0"

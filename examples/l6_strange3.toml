@@ -1,0 +1,88 @@
+[nodes]
+	[nodes.16]
+		type = "transform"
+		position = [1213.6318359375000, 900.29980468750000]
+		[[nodes.16.inputs]]
+			geometry = "3"
+		[[nodes.16.inputs]]
+			matrix = "12"
+	[nodes.15]
+		color = [0.97726219892501831, 0.21434874832630157, 0.21434874832630157]
+		thickness = 0.0099999997764825821
+		type = "renderer"
+		position = [1472.1857910156250, 925.41613769531250]
+		[[nodes.15.inputs]]
+			geometry = "16"
+	[nodes.14]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [997.92333984375000, 1268.1857910156250]
+		[[nodes.14.inputs]]
+			geometry = "11"
+	[nodes.12]
+		position = [442.00003051757812, 1458.0000000000000]
+		row_2 = "-sin(u), cos(u), 0, 0"
+		row_4 = "0, 0, 0, 1"
+		type = "matrix"
+		row_1 = "cos(u), sin(u), 0, 0"
+		row_3 = "0, 0, 1, 0"
+		[[nodes.12.inputs]]
+			interval = "13"
+	[nodes.0]
+		z = "0"
+		y = "0"
+		x = "0.0"
+		type = "point"
+		position = [330.00000000000000, 646.00000000000000]
+	[nodes.11]
+		type = "transform"
+		position = [731.00000000000000, 1325.0000000000000]
+		[[nodes.11.inputs]]
+			geometry = "10"
+		[[nodes.11.inputs]]
+			matrix = "12"
+	[nodes.4]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [1352.8701171875000, 680.66021728515625]
+		[[nodes.4.inputs]]
+			geometry = "3"
+	[nodes.1]
+		z = "3"
+		y = "-1"
+		x = "1"
+		type = "point"
+		position = [358.60449218750000, 820.12536621093750]
+	[nodes.2]
+		z = "3"
+		y = "0"
+		x = "0"
+		type = "point"
+		position = [322.00000000000000, 1050.0000000000000]
+	[nodes.10]
+		z = "2"
+		y = "0"
+		x = "2"
+		type = "point"
+		position = [487.00003051757812, 1278.0000000000000]
+	[nodes.13]
+		position = [274.00000000000000, 1265.0000000000000]
+		end = "2*pi"
+		type = "interval"
+		parameter = "u"
+		subdivisions = 32
+		begin = "0"
+	[nodes.3]
+		subdivisions = 252
+		type = "bezier"
+		position = [956.00000000000000, 694.00000000000000]
+		[[nodes.3.inputs]]
+			P0 = "2"
+		[[nodes.3.inputs]]
+			P1 = "1"
+		[[nodes.3.inputs]]
+			P2 = "10"
+		[[nodes.3.inputs]]
+			P3 = "0"

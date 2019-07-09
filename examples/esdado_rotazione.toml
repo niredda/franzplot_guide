@@ -1,0 +1,93 @@
+[nodes]
+	[nodes.5]
+		type = "plane"
+		position = [816.00000000000000, 674.00000000000000]
+		[[nodes.5.inputs]]
+			P0 = "6"
+		[[nodes.5.inputs]]
+			normal = "7"
+	[nodes.8]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [1238.0000000000000, 700.00000000000000]
+		[[nodes.8.inputs]]
+			geometry = "5"
+	[nodes.0]
+		size = "0.5"
+		kind = "dice"
+		type = "primitive"
+		position = [645.00000000000000, 147.00000000000000]
+	[nodes.12]
+		z = "0"
+		y = "1"
+		x = "-1"
+		type = "vector"
+		position = [640.00000000000000, 1063.0000000000000]
+	[nodes.6]
+		z = "0"
+		y = "0"
+		x = "0"
+		type = "point"
+		position = [567.00000000000000, 670.00000000000000]
+	[nodes.7]
+		z = "0"
+		y = "1"
+		x = "1"
+		type = "vector"
+		position = [559.00000000000000, 881.00000000000000]
+	[nodes.10]
+		color = [0.61761009693145752, 0.60753071308135986, 0.94607841968536377]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [1371.0000000000000, 401.00000000000000]
+		[[nodes.10.inputs]]
+			geometry = "9"
+	[nodes.13]
+		color = [0.0000000000000000, 0.53287190198898315, 0.64705884456634521]
+		thickness = 0.10000000149011612
+		type = "vector_renderer"
+		position = [1037.0000000000000, 1018.0000000000000]
+		[[nodes.13.inputs]]
+			app_point = "6"
+		[[nodes.13.inputs]]
+			vector = "12"
+	[nodes.3]
+		type = "transform"
+		position = [1005.9999389648438, 154.00000000000000]
+		[[nodes.3.inputs]]
+			geometry = "0"
+		[[nodes.3.inputs]]
+			matrix = "1"
+	[nodes.2]
+		z = "0"
+		y = "1"
+		x = "2"
+		type = "vector"
+		position = [617.00000000000000, 298.00000000000000]
+	[nodes.1]
+		type = "translation_matrix"
+		position = [823.00000000000000, 287.00000000000000]
+		[[nodes.1.inputs]]
+			vector = "2"
+	[nodes.9]
+		type = "transform"
+		position = [1156.0000000000000, 332.00000000000000]
+		[[nodes.9.inputs]]
+			geometry = "3"
+		[[nodes.9.inputs]]
+			matrix = "11"
+	[nodes.4]
+		color = [0.89705884456634521, 0.0000000000000000, 0.0000000000000000]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [1309.0000000000000, 171.00000000000000]
+		[[nodes.4.inputs]]
+			geometry = "3"
+	[nodes.11]
+		position = [721.00000000000000, 469.00000000000000]
+		row_2 = "-1,    0,    0,    0"
+		row_4 = "0,    0,    0,    1"
+		type = "matrix"
+		row_1 = "0,    -1,    0,    0"
+		row_3 = "0,    0,    -1,    0"

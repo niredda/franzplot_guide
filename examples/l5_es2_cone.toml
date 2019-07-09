@@ -1,0 +1,56 @@
+[nodes]
+	[nodes.7]
+		position = [120.99998474121094, 751.00000000000000]
+		end = "2"
+		type = "interval"
+		parameter = "v"
+		subdivisions = 3
+		begin = "-2"
+	[nodes.3]
+		position = [465.00003051757812, 647.00000000000000]
+		row_2 = "0,  t,  0,  0"
+		row_4 = "0,  0,  0,  1"
+		type = "time_transform"
+		row_1 = "t,  0,  0,  0"
+		row_3 = "0,  0,  1,  2*t"
+	[nodes.8]
+		fz = "2*v"
+		fy = "v*sin(2*pi*u)"
+		fx = "v*cos(2*pi*u)"
+		type = "surface"
+		position = [635.00000000000000, 852.99993896484375]
+		[[nodes.8.inputs]]
+			first_interval = "1"
+		[[nodes.8.inputs]]
+			second_interval = "7"
+	[nodes.5]
+		color = [0.0000000000000000, 1.0967254638671875e-5, 1.0000000000000000]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [942.00000000000000, 797.00000000000000]
+		[[nodes.5.inputs]]
+			geometry = "8"
+	[nodes.1]
+		position = [154.00000000000000, 488.00000000000000]
+		end = "1"
+		type = "interval"
+		parameter = "u"
+		subdivisions = 108
+		begin = "0"
+	[nodes.2]
+		color = [1.0000000000000000, 0.0000000000000000, 0.0000000000000000]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [860.00000000000000, 477.00000000000000]
+		[[nodes.2.inputs]]
+			geometry = "0"
+		[[nodes.2.inputs]]
+			time_transform = "3"
+	[nodes.0]
+		fz = "0"
+		fy = "sin(2*pi*u)"
+		fx = "cos(2*pi*u)"
+		type = "curve"
+		position = [495.00003051757812, 487.00000000000000]
+		[[nodes.0.inputs]]
+			interval = "1"

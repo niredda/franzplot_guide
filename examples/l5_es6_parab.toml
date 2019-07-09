@@ -1,0 +1,62 @@
+[nodes]
+	[nodes.2]
+		color = [0.0000000000000000, 9.7059796644316521e-7, 9.9999999747524271e-7]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [860.00000000000000, 477.00000000000000]
+		[[nodes.2.inputs]]
+			geometry = "0"
+		[[nodes.2.inputs]]
+			time_transform = "3"
+	[nodes.1]
+		position = [154.00000000000000, 488.00000000000000]
+		end = "1"
+		type = "interval"
+		parameter = "u"
+		subdivisions = 138
+		begin = "-1"
+	[nodes.4]
+		type = "transform"
+		position = [702.00000000000000, 775.00000000000000]
+		[[nodes.4.inputs]]
+			geometry = "0"
+		[[nodes.4.inputs]]
+			matrix = "6"
+	[nodes.0]
+		fz = "sin(pi*u)"
+		fy = "1"
+		fx = "cos(pi*u)"
+		type = "curve"
+		position = [477.00003051757812, 489.00000000000000]
+		[[nodes.0.inputs]]
+			interval = "1"
+	[nodes.5]
+		color = [1.0000000000000000, 0.85294121503829956, 0.0000000000000000]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [933.00000000000000, 798.00000000000000]
+		[[nodes.5.inputs]]
+			geometry = "4"
+	[nodes.6]
+		position = [442.00003051757812, 920.00000000000000]
+		row_2 = "0,  v*v,  0,   0"
+		row_4 = "0,   0,   0,   1"
+		type = "matrix"
+		row_1 = "v,  0,   0,   0"
+		row_3 = "0,  0,  v,   0"
+		[[nodes.6.inputs]]
+			interval = "7"
+	[nodes.3]
+		position = [396.00003051757812, 666.00000000000000]
+		row_2 = "0,  t*t,  0,   0"
+		row_4 = "0,   0,   0,   1"
+		type = "time_transform"
+		row_1 = "t,  0,   0,   0"
+		row_3 = "0,  0,  t,   0"
+	[nodes.7]
+		position = [91.999984741210938, 829.00000000000000]
+		end = "2"
+		type = "interval"
+		parameter = "v"
+		subdivisions = 143
+		begin = "-1"

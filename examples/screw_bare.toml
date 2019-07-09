@@ -1,0 +1,79 @@
+[nodes]
+	[nodes.7]
+		position = [340.00003051757812, 482.00000000000000]
+		row_2 = "0, 0.2, 0, 0"
+		row_4 = "0, 0, 0, 1"
+		type = "matrix"
+		row_1 = "0.2, 0, 0, 0"
+		row_3 = "0, 0, 0.2, 1.1"
+	[nodes.12]
+		type = "transform"
+		position = [535.00000000000000, 648.00000000000000]
+		[[nodes.12.inputs]]
+			geometry = "2"
+		[[nodes.12.inputs]]
+			matrix = "8"
+	[nodes.6]
+		type = "transform"
+		position = [591.00000000000000, 71.000000000000000]
+		[[nodes.6.inputs]]
+			geometry = "0"
+		[[nodes.6.inputs]]
+			matrix = "9"
+	[nodes.8]
+		position = [280.00003051757812, 762.00000000000000]
+		row_2 = "0, 0.4, 0, 0"
+		row_4 = "0, 0, 0, 1"
+		type = "matrix"
+		row_1 = "0.4, 0, 0, 0"
+		row_3 = "0, 0, 0.2, 0"
+	[nodes.5]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [876.00000000000000, 635.00000000000000]
+		[[nodes.5.inputs]]
+			geometry = "12"
+	[nodes.0]
+		size = "1"
+		kind = "cylinder"
+		type = "primitive"
+		position = [104.99999237060547, 85.000000000000000]
+	[nodes.11]
+		type = "transform"
+		position = [608.00000000000000, 333.00000000000000]
+		[[nodes.11.inputs]]
+			geometry = "1"
+		[[nodes.11.inputs]]
+			matrix = "7"
+	[nodes.9]
+		position = [304.00003051757812, 210.00000000000000]
+		row_2 = "0, 0.2, 0, 0"
+		row_4 = "0, 0, 0, 1"
+		type = "matrix"
+		row_1 = "0.2, 0, 0, 0"
+		row_3 = "0, 0, 1, 0.5"
+	[nodes.4]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [888.00000000000000, 363.00000000000000]
+		[[nodes.4.inputs]]
+			geometry = "11"
+	[nodes.1]
+		size = "1"
+		kind = "cone"
+		type = "primitive"
+		position = [154.00000000000000, 353.00000000000000]
+	[nodes.2]
+		size = "1"
+		kind = "cone"
+		type = "primitive"
+		position = [138.00003051757812, 627.00000000000000]
+	[nodes.3]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [832.00000000000000, 88.000000000000000]
+		[[nodes.3.inputs]]
+			geometry = "6"

@@ -1,0 +1,84 @@
+[nodes]
+	[nodes.7]
+		z = "3"
+		y = "1"
+		x = "0"
+		type = "point"
+		position = [400.43939208984375, 1676.9863281250000]
+	[nodes.6]
+		z = "3"
+		y = "-1"
+		x = "1"
+		type = "point"
+		position = [418.43939208984375, 1493.9863281250000]
+	[nodes.8]
+		subdivisions = 32
+		type = "bezier"
+		position = [844.43939208984375, 1473.9863281250000]
+		[[nodes.8.inputs]]
+			P0 = "4"
+		[[nodes.8.inputs]]
+			P1 = "5"
+		[[nodes.8.inputs]]
+			P2 = "6"
+		[[nodes.8.inputs]]
+			P3 = "7"
+	[nodes.5]
+		z = "2"
+		y = "0"
+		x = "2"
+		type = "point"
+		position = [397.43939208984375, 1333.9863281250000]
+	[nodes.0]
+		fz = "-3*u^2+6*u"
+		fy = "sin(v)*3*(u^3-3*u^2+2*u)+cos(v)*(4*u^3-3*u^2)"
+		fx = "cos(v)*3*(u^3-3*u^2+2*u)-sin(v)*(4*u^3-3*u^2)"
+		type = "surface"
+		position = [810.08874511718750, 911.72253417968750]
+		[[nodes.0.inputs]]
+			first_interval = "1"
+		[[nodes.0.inputs]]
+			second_interval = "2"
+	[nodes.11]
+		position = [854.43939208984375, 1792.9863281250000]
+		row_2 = "sin(t), cos(t), 0, 0"
+		row_4 = "0, 0, 0, 1"
+		type = "time_transform"
+		row_1 = "cos(t), -sin(t), 0, 0"
+		row_3 = "0, 0, 1, 0"
+	[nodes.9]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [1136.4394531250000, 1561.9863281250000]
+		[[nodes.9.inputs]]
+			geometry = "8"
+		[[nodes.9.inputs]]
+			time_transform = "11"
+	[nodes.4]
+		z = "0"
+		y = "0"
+		x = "0"
+		type = "point"
+		position = [409.43939208984375, 1169.9863281250000]
+	[nodes.1]
+		position = [491.43939208984375, 827.98626708984375]
+		end = "1"
+		type = "interval"
+		parameter = "u"
+		subdivisions = 252
+		begin = "0"
+	[nodes.2]
+		position = [516.43939208984375, 999.98632812500000]
+		end = "2*pi"
+		type = "interval"
+		parameter = "v"
+		subdivisions = 252
+		begin = "0"
+	[nodes.3]
+		color = [0.77941179275512695, 0.0000000000000000, 0.0000000000000000]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [1136.4394531250000, 926.98632812500000]
+		[[nodes.3.inputs]]
+			geometry = "0"

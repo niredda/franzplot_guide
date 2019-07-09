@@ -1,0 +1,294 @@
+[nodes]
+	[nodes.20]
+		type = "transform"
+		position = [484.00003051757812, 1025.0000000000000]
+		[[nodes.20.inputs]]
+			geometry = "14"
+		[[nodes.20.inputs]]
+			matrix = "22"
+	[nodes.15]
+		size = "1"
+		kind = "cylinder"
+		type = "primitive"
+		position = [122.99998474121094, 1384.0000000000000]
+	[nodes.2]
+		type = "translation_matrix"
+		position = [335.00000000000000, 271.00000000000000]
+		[[nodes.2.inputs]]
+			vector = "1"
+	[nodes.4]
+		color = [0.83329033851623535, 0.88235294818878174, 0.060553655028343201]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [771.00000000000000, 171.00000000000000]
+		[[nodes.4.inputs]]
+			geometry = "3"
+	[nodes.18]
+		type = "translation_matrix"
+		position = [370.00000000000000, 1708.0000000000000]
+		[[nodes.18.inputs]]
+			vector = "10"
+	[nodes.13]
+		type = "translation_matrix"
+		position = [663.00000000000000, 743.00000000000000]
+		[[nodes.13.inputs]]
+			vector = "12"
+	[nodes.16]
+		color = [0.98529410362243652, 0.019319491460919380, 0.019319491460919380]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [906.00000000000000, 1038.0000000000000]
+		[[nodes.16.inputs]]
+			geometry = "21"
+	[nodes.41]
+		z = "4"
+		y = "0"
+		x = "0"
+		type = "vector"
+		position = [128.00003051757812, 2897.0000000000000]
+	[nodes.33]
+		z = "0"
+		y = "1"
+		x = "0"
+		type = "vector"
+		position = [73.000000000000000, 2102.0000000000000]
+	[nodes.25]
+		type = "transform"
+		position = [660.00000000000000, 1425.0000000000000]
+		[[nodes.25.inputs]]
+			geometry = "26"
+		[[nodes.25.inputs]]
+			matrix = "18"
+	[nodes.1]
+		z = "-1"
+		y = "-0.5"
+		x = "1"
+		type = "vector"
+		position = [126.99998474121094, 290.00000000000000]
+	[nodes.0]
+		size = "2"
+		kind = "sphere"
+		type = "primitive"
+		position = [171.00000000000000, 138.00000000000000]
+	[nodes.17]
+		color = [0.050736997276544571, 0.94607841968536377, 0.023188181221485138]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [876.00000000000000, 1396.0000000000000]
+		[[nodes.17.inputs]]
+			geometry = "25"
+	[nodes.34]
+		z = "1"
+		y = "0"
+		x = "0"
+		type = "vector"
+		position = [72.000000000000000, 2232.0000000000000]
+	[nodes.43]
+		color = [0.052654184401035309, 0.0000000000000000, 0.88235294818878174]
+		thickness = 0.10000000149011612
+		type = "vector_renderer"
+		position = [770.00000000000000, 2936.0000000000000]
+		[[nodes.43.inputs]]
+			app_point = "44"
+		[[nodes.43.inputs]]
+			vector = "41"
+	[nodes.11]
+		type = "transform"
+		position = [664.00000000000000, 589.00000000000000]
+		[[nodes.11.inputs]]
+			geometry = "19"
+		[[nodes.11.inputs]]
+			matrix = "13"
+	[nodes.27]
+		position = [169.00000000000000, 1559.0000000000000]
+		row_2 = "0,   2,   0,   0"
+		row_4 = "0,   0,   0,   1"
+		type = "matrix"
+		row_1 = "2,   0,   0,   0"
+		row_3 = "0,   0,   2,   0"
+	[nodes.22]
+		position = [196.00003051757812, 1219.0000000000000]
+		row_2 = "0,   0.5,   0,   0"
+		row_4 = "0,   0,   0,   1"
+		type = "matrix"
+		row_1 = "2,   0,   0,   0"
+		row_3 = "0,   0,   3,   0"
+	[nodes.26]
+		type = "transform"
+		position = [422.00000000000000, 1435.0000000000000]
+		[[nodes.26.inputs]]
+			geometry = "15"
+		[[nodes.26.inputs]]
+			matrix = "27"
+	[nodes.14]
+		size = "1"
+		kind = "cube"
+		type = "primitive"
+		position = [180.00003051757812, 1038.0000000000000]
+	[nodes.7]
+		size = "1"
+		kind = "pyramid"
+		type = "primitive"
+		position = [157.00000000000000, 611.00000000000000]
+	[nodes.23]
+		type = "translation_matrix"
+		position = [562.00000000000000, 1185.0000000000000]
+		[[nodes.23.inputs]]
+			vector = "24"
+	[nodes.5]
+		position = [364.00003051757812, 441.00000000000000]
+		row_2 = "0,    0.5,    0,    0"
+		row_4 = "0,    0,    0,    1"
+		type = "matrix"
+		row_1 = "0.5,    0,    0,    0"
+		row_3 = "0,    0,    0.5,    0"
+	[nodes.44]
+		z = "0"
+		y = "0"
+		x = "0"
+		type = "point"
+		position = [293.00000000000000, 2780.0000000000000]
+	[nodes.32]
+		z = "0"
+		y = "0"
+		x = "1"
+		type = "vector"
+		position = [84.000000000000000, 1973.0000000000000]
+	[nodes.28]
+		type = "plane"
+		position = [472.00003051757812, 1868.0000000000000]
+		[[nodes.28.inputs]]
+			P0 = "31"
+		[[nodes.28.inputs]]
+			normal = "32"
+	[nodes.8]
+		color = [0.017834078520536423, 0.0000000000000000, 0.59803920984268188]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [922.00000000000000, 601.00000000000000]
+		[[nodes.8.inputs]]
+			geometry = "11"
+	[nodes.30]
+		type = "plane"
+		position = [464.00003051757812, 2132.0000000000000]
+		[[nodes.30.inputs]]
+			P0 = "31"
+		[[nodes.30.inputs]]
+			normal = "34"
+	[nodes.42]
+		color = [0.029850602149963379, 1.0000000000000000, 0.0000000000000000]
+		thickness = 0.10000000149011612
+		type = "vector_renderer"
+		position = [777.00000000000000, 2697.0000000000000]
+		[[nodes.42.inputs]]
+			app_point = "44"
+		[[nodes.42.inputs]]
+			vector = "40"
+	[nodes.6]
+		type = "transform"
+		position = [636.00000000000000, 314.00000000000000]
+		[[nodes.6.inputs]]
+			geometry = "0"
+		[[nodes.6.inputs]]
+			matrix = "5"
+	[nodes.29]
+		type = "plane"
+		position = [469.00003051757812, 2012.0000000000000]
+		[[nodes.29.inputs]]
+			P0 = "31"
+		[[nodes.29.inputs]]
+			normal = "33"
+	[nodes.40]
+		z = "0"
+		y = "4"
+		x = "0"
+		type = "vector"
+		position = [158.00000000000000, 2656.0000000000000]
+	[nodes.3]
+		type = "transform"
+		position = [538.00000000000000, 134.00000000000000]
+		[[nodes.3.inputs]]
+			geometry = "6"
+		[[nodes.3.inputs]]
+			matrix = "2"
+	[nodes.39]
+		color = [1.0000000000000000, 0.0000000000000000, 0.0000000000000000]
+		thickness = 0.10000000149011612
+		type = "vector_renderer"
+		position = [777.00000000000000, 2433.0000000000000]
+		[[nodes.39.inputs]]
+			app_point = "44"
+		[[nodes.39.inputs]]
+			vector = "38"
+	[nodes.19]
+		type = "transform"
+		position = [427.00003051757812, 610.00000000000000]
+		[[nodes.19.inputs]]
+			geometry = "7"
+		[[nodes.19.inputs]]
+			matrix = "9"
+	[nodes.38]
+		z = "0"
+		y = "0"
+		x = "4"
+		type = "vector"
+		position = [97.999984741210938, 2452.0000000000000]
+	[nodes.21]
+		type = "transform"
+		position = [697.00000000000000, 1025.0000000000000]
+		[[nodes.21.inputs]]
+			geometry = "20"
+		[[nodes.21.inputs]]
+			matrix = "23"
+	[nodes.31]
+		z = "0"
+		y = "0"
+		x = "0"
+		type = "point"
+		position = [88.000000000000000, 1850.0000000000000]
+	[nodes.24]
+		z = "0.5"
+		y = "0.25"
+		x = "1"
+		type = "vector"
+		position = [460.00003051757812, 1315.0000000000000]
+	[nodes.35]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [782.00000000000000, 1865.0000000000000]
+		[[nodes.35.inputs]]
+			geometry = "28"
+	[nodes.9]
+		position = [203.00003051757812, 795.00000000000000]
+		row_2 = "0,    2,    0,    0"
+		row_4 = "0,    0,    0,    1"
+		type = "matrix"
+		row_1 = "2,    0,    0,    0"
+		row_3 = "0,    0,    2,    0"
+	[nodes.37]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [805.00000000000000, 2198.0000000000000]
+		[[nodes.37.inputs]]
+			geometry = "30"
+	[nodes.12]
+		z = "0"
+		y = "1.5"
+		x = "1"
+		type = "vector"
+		position = [480.00003051757812, 838.00000000000000]
+	[nodes.36]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [815.00000000000000, 2030.0000000000000]
+		[[nodes.36.inputs]]
+			geometry = "29"
+	[nodes.10]
+		z = "0"
+		y = "1"
+		x = "-1"
+		type = "vector"
+		position = [99.999984741210938, 1724.0000000000000]

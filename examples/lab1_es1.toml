@@ -1,0 +1,39 @@
+[nodes]
+	[nodes.3]
+		position = [227.00003051757812, 562.00000000000000]
+		row_2 = "0, 1, 0, 0"
+		row_4 = "0, 0, 0, 1"
+		type = "matrix"
+		row_1 = "2, 0, 0, 0"
+		row_3 = "0, 0, 0.5, 0"
+	[nodes.2]
+		size = "1"
+		kind = "cylinder"
+		type = "primitive"
+		position = [186.00000000000000, 417.00000000000000]
+	[nodes.4]
+		type = "transform"
+		position = [513.00000000000000, 412.00000000000000]
+		[[nodes.4.inputs]]
+			geometry = "2"
+		[[nodes.4.inputs]]
+			matrix = "3"
+	[nodes.0]
+		size = "1"
+		kind = "cylinder"
+		type = "primitive"
+		position = [205.00000000000000, 186.00000000000000]
+	[nodes.5]
+		color = [0.82089555263519287, 1.0000000000000000, 0.0000000000000000]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [781.00000000000000, 434.00000000000000]
+		[[nodes.5.inputs]]
+			geometry = "4"
+	[nodes.1]
+		color = [0.11764717102050781, 0.0000000000000000, 1.0000000000000000]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [726.00000000000000, 204.00000000000000]
+		[[nodes.1.inputs]]
+			geometry = "0"

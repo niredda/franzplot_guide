@@ -1,0 +1,23 @@
+[nodes]
+	[nodes.2]
+		position = [136.00000000000000, 215.00000000000000]
+		end = "2*pi"
+		type = "interval"
+		parameter = "x"
+		subdivisions = 206
+		begin = "0"
+	[nodes.0]
+		fz = "0"
+		fy = "2*cos(x)"
+		fx = "sin(2*x)"
+		type = "curve"
+		position = [438.00003051757812, 216.00000000000000]
+		[[nodes.0.inputs]]
+			interval = "2"
+	[nodes.1]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [742.00000000000000, 211.00000000000000]
+		[[nodes.1.inputs]]
+			geometry = "0"

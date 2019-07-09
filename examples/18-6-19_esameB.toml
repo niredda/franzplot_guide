@@ -1,0 +1,92 @@
+[nodes]
+	[nodes.15]
+		position = [602.50280761718750, 321.82977294921875]
+		row_2 = "cos(t)*sin(t), cos(t)^2, -sin(t), 0"
+		row_4 = "0, 0, 0, 1"
+		type = "time_transform"
+		row_1 = "cos(t), -sin(t), 0, 0"
+		row_3 = "sin(t)^2, cos(t)*sin(t), cos(t), 0"
+	[nodes.14]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [1003.8128662109375, 914.97473144531250]
+		[[nodes.14.inputs]]
+			geometry = "11"
+	[nodes.10]
+		fz = "u*(sin(v)^2+cos(v)*sin(v))"
+		fy = "u*(cos(v)*sin(v)+cos(v)^2)"
+		fx = "u*(cos(v)-sin(v))"
+		type = "surface"
+		position = [467.00003051757812, 732.00000000000000]
+		[[nodes.10.inputs]]
+			first_interval = "2"
+		[[nodes.10.inputs]]
+			second_interval = "3"
+	[nodes.5]
+		color = [1.0000000000000000, 0.82352900505065918, 0.0000000000000000]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [917.00000000000000, 522.00000000000000]
+		[[nodes.5.inputs]]
+			geometry = "1"
+	[nodes.0]
+		fz = "0"
+		fy = "u"
+		fx = "u"
+		type = "curve"
+		position = [481.00003051757812, 146.00000000000000]
+		[[nodes.0.inputs]]
+			interval = "2"
+	[nodes.11]
+		type = "sample"
+		position = [754.64782714843750, 883.00225830078125]
+		[[nodes.11.inputs]]
+			geometry = "10"
+		[[nodes.11.inputs]]
+			value = "13"
+	[nodes.9]
+		color = [0.0000000000000000, 0.081658542156219482, 0.91176468133926392]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [908.00000000000000, 707.00000000000000]
+		[[nodes.9.inputs]]
+			geometry = "10"
+	[nodes.4]
+		color = [0.80000001192092896, 0.80000001192092896, 0.80000001192092896]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [873.00000000000000, 145.00000000000000]
+		[[nodes.4.inputs]]
+			geometry = "0"
+		[[nodes.4.inputs]]
+			time_transform = "15"
+	[nodes.1]
+		fz = "0"
+		fy = "u*(sin(v)+cos(v))"
+		fx = "u*(cos(v)-sin(v))"
+		type = "surface"
+		position = [435.00003051757812, 493.00000000000000]
+		[[nodes.1.inputs]]
+			first_interval = "2"
+		[[nodes.1.inputs]]
+			second_interval = "3"
+	[nodes.2]
+		position = [164.00000000000000, 135.00000000000000]
+		end = "1"
+		type = "interval"
+		parameter = "u"
+		subdivisions = 252
+		begin = "0"
+	[nodes.13]
+		parameter = "u"
+		type = "value"
+		value = "0.5"
+		position = [501.07275390625000, 933.71716308593750]
+	[nodes.3]
+		position = [142.00000000000000, 312.00000000000000]
+		end = "2*pi"
+		type = "interval"
+		parameter = "v"
+		subdivisions = 252
+		begin = "0"
