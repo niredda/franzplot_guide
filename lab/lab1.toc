@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{Il FranzPlot }{2}{0}{1}
+\beamer@sectionintoc {2}{Interfaccia}{4}{0}{2}
+\beamer@sectionintoc {3}{Trasformazioni}{6}{0}{3}
+\beamer@sectionintoc {4}{Esercizi}{15}{0}{4}
