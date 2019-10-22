@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.14)  16 OCT 2019 19:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.14)  22 OCT 2019 15:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1114,24 +1114,14 @@ Overfull \hbox (7.29921pt too wide) in paragraph at lines 252--252
  <./figures/l1_es4_result.png>] [26
 
 ]
-<figures/proj1.png, id=733, 654.445pt x 526.96875pt>
-File: figures/proj1.png Graphic file (type png)
-<use figures/proj1.png>
-Package pdftex.def Info: figures/proj1.png  used on input line 284.
-(pdftex.def)             Requested size: 98.335pt x 79.17859pt.
-<figures/proj2.png, id=734, 630.355pt x 568.1225pt>
-File: figures/proj2.png Graphic file (type png)
-<use figures/proj2.png>
-Package pdftex.def Info: figures/proj2.png  used on input line 284.
-(pdftex.def)             Requested size: 98.335pt x 88.62154pt.
-<figures/proj3.png, id=735, 621.32124pt x 522.95375pt>
-File: figures/proj3.png Graphic file (type png)
-<use figures/proj3.png>
-Package pdftex.def Info: figures/proj3.png  used on input line 284.
-(pdftex.def)             Requested size: 98.335pt x 82.76463pt.
+<figures/lab1_homework.png, id=733, 682.9515pt x 227.6505pt>
+File: figures/lab1_homework.png Graphic file (type png)
+<use figures/lab1_homework.png>
+Package pdftex.def Info: figures/lab1_homework.png  used on input line 278.
+(pdftex.def)             Requested size: 307.28987pt x 102.43135pt.
  [27
 
- <./figures/proj1.png> <./figures/proj2.png> <./figures/proj3.png>]
+ <./figures/lab1_homework.png>]
 \tf@nav=\write6
 \openout6 = `lab1.nav'.
 
@@ -1141,19 +1131,20 @@ Package pdftex.def Info: figures/proj3.png  used on input line 284.
 \tf@snm=\write8
 \openout8 = `lab1.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 286.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 286.
- (./lab1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 286.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 286.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 280.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 280.
+
+(./lab1.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 280.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 280.
 Package rerunfilecheck Info: File `lab1.out' has not changed.
 (rerunfilecheck)             Checksum: EE8D96700EF989503F395144CA42A5DD;186.
  ) 
 Here is how much of TeX's memory you used:
- 20094 strings out of 494839
- 394647 string characters out of 6178684
+ 20084 strings out of 494839
+ 394495 string characters out of 6178684
  457619 words of memory out of 5000000
- 22899 multiletter control sequences out of 15000+600000
+ 22891 multiletter control sequences out of 15000+600000
  15526 words of font info for 57 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  56i,14n,59p,791b,660s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1168,10 +1159,10 @@ ype1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/symbols/msam10.pfb>
-Output written on lab1.pdf (27 pages, 724840 bytes).
+Output written on lab1.pdf (27 pages, 753756 bytes).
 PDF statistics:
- 816 PDF objects out of 1000 (max. 8388607)
+ 812 PDF objects out of 1000 (max. 8388607)
  727 compressed objects within 8 object streams
  59 named destinations out of 1000 (max. 500000)
- 195 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 185 words of extra memory for PDF output out of 10000 (max. 10000000)
 
