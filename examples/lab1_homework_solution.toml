@@ -1,0 +1,159 @@
+[nodes]
+	[nodes.23]
+		type = "transform"
+		position = [712.00000000000000, 1077.0000000000000]
+		[[nodes.23.inputs]]
+			geometry = "21"
+		[[nodes.23.inputs]]
+			matrix = "24"
+	[nodes.20]
+		angle = "pi/2"
+		type = "rotation_matrix"
+		axis = "y"
+		position = [322.00003051757812, 1173.0000000000000]
+	[nodes.18]
+		color = [0.94029843807220459, 1.0000000000000000, 0.0000000000000000]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [982.00000000000000, 799.00000000000000]
+		[[nodes.18.inputs]]
+			geometry = "15"
+	[nodes.24]
+		type = "translation_matrix"
+		position = [703.00000000000000, 1190.0000000000000]
+		[[nodes.24.inputs]]
+			vector = "25"
+	[nodes.17]
+		z = "-0.5"
+		y = "1"
+		x = "-1"
+		type = "vector"
+		position = [388.00000000000000, 902.00000000000000]
+	[nodes.16]
+		type = "translation_matrix"
+		position = [582.00000000000000, 892.00000000000000]
+		[[nodes.16.inputs]]
+			vector = "17"
+	[nodes.9]
+		position = [216.00000000000000, 561.00000000000000]
+		row_2 = "0,  2,  0,  0"
+		row_4 = "0,  0,  0,  1"
+		type = "matrix"
+		row_1 = "3,  0,  0,  0"
+		row_3 = "0,  0,  0.5,  0"
+	[nodes.21]
+		type = "transform"
+		position = [438.00003051757812, 1076.0000000000000]
+		[[nodes.21.inputs]]
+			geometry = "19"
+		[[nodes.21.inputs]]
+			matrix = "20"
+	[nodes.4]
+		z = "1"
+		y = "-1"
+		x = "0"
+		type = "vector"
+		position = [514.00000000000000, 304.00000000000000]
+	[nodes.11]
+		z = "0.25"
+		y = "1"
+		x = "0.5"
+		type = "vector"
+		position = [532.00000000000000, 576.00000000000000]
+	[nodes.3]
+		type = "translation_matrix"
+		position = [686.00000000000000, 276.00000000000000]
+		[[nodes.3.inputs]]
+			vector = "4"
+	[nodes.13]
+		color = [0.84803920984268188, 0.0000000000000000, 0.0000000000000000]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [990.00000000000000, 482.00000000000000]
+		[[nodes.13.inputs]]
+			geometry = "10"
+	[nodes.0]
+		size = "2"
+		kind = "cylinder"
+		type = "primitive"
+		position = [146.00000000000000, 155.00000000000000]
+	[nodes.7]
+		size = "1"
+		kind = "cube"
+		type = "primitive"
+		position = [128.99998474121094, 412.00000000000000]
+	[nodes.10]
+		type = "transform"
+		position = [748.00000000000000, 463.00000000000000]
+		[[nodes.10.inputs]]
+			geometry = "8"
+		[[nodes.10.inputs]]
+			matrix = "12"
+	[nodes.25]
+		z = "1.5"
+		y = "1"
+		x = "0"
+		type = "vector"
+		position = [564.00000000000000, 1256.0000000000000]
+	[nodes.1]
+		color = [0.059701442718505859, 1.0000000000000000, 0.0000000000000000]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [948.00000000000000, 165.00000000000000]
+		[[nodes.1.inputs]]
+			geometry = "6"
+	[nodes.12]
+		type = "translation_matrix"
+		position = [724.00000000000000, 595.00000000000000]
+		[[nodes.12.inputs]]
+			vector = "11"
+	[nodes.6]
+		type = "transform"
+		position = [686.00000000000000, 143.00000000000000]
+		[[nodes.6.inputs]]
+			geometry = "2"
+		[[nodes.6.inputs]]
+			matrix = "3"
+	[nodes.8]
+		type = "transform"
+		position = [438.00003051757812, 457.00000000000000]
+		[[nodes.8.inputs]]
+			geometry = "7"
+		[[nodes.8.inputs]]
+			matrix = "9"
+	[nodes.22]
+		color = [0.0000000000000000, 0.029858589172363281, 1.0000000000000000]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [1002.0000000000000, 1096.0000000000000]
+		[[nodes.22.inputs]]
+			geometry = "23"
+	[nodes.5]
+		angle = "pi/2"
+		type = "rotation_matrix"
+		axis = "y"
+		position = [288.00000000000000, 263.00000000000000]
+	[nodes.2]
+		type = "transform"
+		position = [420.00000000000000, 152.00000000000000]
+		[[nodes.2.inputs]]
+			geometry = "0"
+		[[nodes.2.inputs]]
+			matrix = "5"
+	[nodes.14]
+		size = "1"
+		kind = "sphere"
+		type = "primitive"
+		position = [371.00000000000000, 787.00000000000000]
+	[nodes.19]
+		size = "2"
+		kind = "pyramid"
+		type = "primitive"
+		position = [110.99999237060547, 1062.0000000000000]
+	[nodes.15]
+		type = "transform"
+		position = [734.00000000000000, 775.00000000000000]
+		[[nodes.15.inputs]]
+			geometry = "14"
+		[[nodes.15.inputs]]
+			matrix = "16"
