@@ -18,7 +18,7 @@
 \title[Curve e Sup. - Lab 1]{Curve e Superfici per il Design \\ Laboratorio - 1}
 \author[Prof. Parolini]{Prof. Nicola Parolini}
 %\institute[dimat]{Long Inst.}
-\date{23 Ottobre 2019}
+\date{24 Ottobre 2019}
 
 \begin{document}
 \begin{frame}
@@ -167,7 +167,14 @@ calcoliamo
     \end{equation*}
 e otteniamo
 \begin{displaymath}
-\hat{v} =  \begin{bmatrix}
+\hat{v} =
+    \frac{1}{\sqrt{2}}
+    \begin{bmatrix}
+    1 \\
+    1 \\
+    0
+                \end{bmatrix}
+=  \begin{bmatrix}
     \nicefrac{1}{\sqrt{2}}\\
     \nicefrac{1}{\sqrt{2}}\\
                 0
@@ -464,7 +471,7 @@ Per disegnare correttamente i vettori, \`e fondamentale spiccarli correttamente!
     \item Rappresentare nel \frnzplt i tre vettori, con l'origine degli assi come punto di applicazione.
     \item Rappresentare nel \frnzplt il piano passante per l'origine e avente normale $\mathbf w$.
         Verificare che $\mathbf u$ e $\mathbf v$ giacciono sul piano.
-    \item Cosa cambierebbe se anzich\'e $\mathbf w$ usassimo $\tilde{\mathbf{w}} = \mathbf v \times \mathbf u$
+    \item Cosa cambierebbe se anzich\'e $\mathbf w$ usassimo $\tilde{\mathbf{w}} = \mathbf v \times \mathbf u$?
 \end{itemize}
 \end{frame}
 
@@ -522,5 +529,28 @@ Abbiamo quindi trovato il risultato che cercavamo:
 \end{center}
 \end{frame}
 
+\begin{frame}
+\frametitle{Esercizio 5 - iii}
+Dalla teoria sappiamo che
+\begin{displaymath}
+\mathbf{b} \times \mathbf{a} = - (\mathbf{a} \times \mathbf{b})
+\end{displaymath}
+ovvero invertendo l'ordine del prodotto vettoriale otteniamo un vettore con i segni opposti rispetto al precedente.
+
+\begin{displaymath}
+\tilde{\mathbf w} = 
+\shortminus \mathbf w = 
+    \left[ \begin{array}{c} 
+        1.5 \\
+        0.5 \\
+        1
+    \end{array} \right]
+\end{displaymath}
+
+\vspace{0.5cm}
+
+Dal punto di vista geometrico, significa che il vettore ha stesso modulo e direzione, ma verso opposto.
+
+\end{frame}
 
 \end{document}
