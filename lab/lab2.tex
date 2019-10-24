@@ -12,6 +12,8 @@
 \newcommand{\dbbslsh}{\textbackslash \textbackslash} % common figure path
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\parallelsum}{\mathbin{\!/\mkern-5mu/\!}}
+\DeclareMathSymbol{\shortminus}{\mathbin}{AMSa}{"39}
+
 
 \title[Curve e Sup. - Lab 1]{Curve e Superfici per il Design \\ Laboratorio - 1}
 \author[Prof. Parolini]{Prof. Nicola Parolini}
@@ -455,37 +457,70 @@ Per disegnare correttamente i vettori, \`e fondamentale spiccarli correttamente!
 \end{frame}
 
 \begin{frame}
-\frametitle{Esercizio 2-iii}
+\frametitle{Esercizio 5}
+    Dati i due vettori $\mathbf{u} = [1, 1, -2]^T$ e $\mathbf{v} = [0.5, -0.5, -0.5]^T$:
+\begin{itemize}
+    \item Calcolare il vettore $\mathbf{w} = \mathbf u \times \mathbf v$
+    \item Rappresentare nel \frnzplt i tre vettori, con l'origine degli assi come punto di applicazione.
+    \item Rappresentare nel \frnzplt il piano passante per l'origine e avente normale $\mathbf w$.
+        Verificare che $\mathbf u$ e $\mathbf v$ giacciono sul piano.
+    \item Cosa cambierebbe se anzich\'e $\mathbf w$ usassimo $\tilde{\mathbf{w}} = \mathbf v \times \mathbf u$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 5 - i}
+Ricordiamo la formula generica per il calcolo del prodotto vettore:
+\begin{displaymath}
+\mathbf a \times \mathbf b = 
+\left[ \begin{array}{c} a_y b_z - b_y a_z \\ b_x a_z - a_x b_z \\ a_x b_y - b_x a_y \end{array} \right]
+\end{displaymath}
+Nel nostro caso:
+\begin{displaymath}
+\mathbf u \times \mathbf v = 
+    \left[ \begin{array}{c} 
+        1 \cdot (\shortminus 0.5) - (\shortminus 0.5) \cdot (\shortminus 2) \\
+        0.5 \cdot (\shortminus 2) - 1 \cdot (\shortminus 0.5) \\
+        1 \cdot (\shortminus 0.5) - (0.5) \cdot 1
+    \end{array} \right]
+=
+    \left[ \begin{array}{c} 
+        \shortminus 0.5 - 1 \\
+        \shortminus 1 + 0.5 \\
+        \shortminus 0.5 - 0.5
+    \end{array} \right]
+=
+    \left[ \begin{array}{c} 
+        \shortminus 1.5 \\
+        \shortminus 0.5 \\
+        \shortminus 1
+    \end{array} \right]
+\end{displaymath}
+
+Abbiamo quindi trovato il risultato che cercavamo:
+
+\begin{displaymath}
+\mathbf w = 
+    \left[ \begin{array}{c} 
+        \shortminus 1.5 \\
+        \shortminus 0.5 \\
+        \shortminus 1
+    \end{array} \right]
+\end{displaymath}
+
+\vspace{0.5cm}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 5 - ii}
 \begin{center}
 \begin{tikzpicture}
-\node(img1){\includegraphics[width=0.7\textwidth]{\fig/l2_es2_dadorot.jpeg}};
-%\node(img2) at (img1.north east){\includegraphics[width=0.4\textwidth]{\fig/snapcode_3-4.png}};
+\node(img1){\includegraphics[width=0.8\textwidth]{\fig/lab2_es5_a.png}};
+\node(img2) at (img1.east){\includegraphics[width=0.25\textwidth]{\fig/lab2_es5_b.png}};
 \end{tikzpicture}
 \end{center}
 \end{frame}
-\begin{frame}
-\frametitle{Esercizio 3}
-\begin{itemize}
-\item Si consideri una sfera di raggio 0.5, con centro nel punto $C=(1,0,0)$. Si
-considerino la matrice di scaling $\mathcal{S}$ con $S_x=2$ $S_y=1$ ed $S_z =0.5$ e la matrice 
-\begin{displaymath}
-\mathcal{B} =  \begin{bmatrix}
-                0 & 0 & 1\\
-                0  & 1 & 0\\
-                -1 & 0 & 0
-                \end{bmatrix}
-\end{displaymath}
-\item Si applichi alla sfera prima la trasformazione $\mathcal{S}$ e poi la trasformazione $\mathcal{B}$.
-\item Si applichi alla sfera prima la trasformazione $\mathcal{B}$ e poi la trasformazione $\mathcal{S}$.
-\item Le trasformazioni $\mathcal{B}$ ed $\mathcal{S}$ commutano?
-\item Che tipo di trasformazione \`e $\mathcal{B}$?
-\end{itemize}
-\end{frame}
-\begin{frame}
-\frametitle{Esercizio 3 - i}
-\includegraphics[width=0.9\textwidth]{\fig/l2_es3.jpeg}
-\end{frame}
-%
 
 
 \end{document}
