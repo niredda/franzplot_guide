@@ -171,49 +171,136 @@ $\begin{bmatrix} 0 & 0 &  0 &  1 \end{bmatrix}  $
     \end{itemize}
 
 \end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 1 - v}
+Svolgendo tutti i calcoli, giungiamo al risultato:
+\begin{displaymath}
+    M =
+\begin{bmatrix}
+   5 &  2 &  3 &  3 \\
+   0 &  1 & -6 &  0 \\
+   0 &  0 &  6 &  2 \\
+   0 &  0 &  0 &  1
+\end{bmatrix}
+\end{displaymath}
+
+Per il calcolo di N, cambia l'ordine delle matrici da moltiplicare!
+\begin{displaymath}
+    R =
+\begin{bmatrix}
+   1 &  0 &  3 &  1 \\
+   2 &  1 &  0 &  1 \\
+   2 &  0 & -3 &  0 \\
+   0 &  0 &  0 &  1 
+\end{bmatrix}
+\begin{bmatrix}
+   1 &  2 &  0 &  0 \\
+  -2 &  1 &  0 &  1 \\
+   3 &  0 &  1 & -1 \\
+   0 &  0 &  0 &  1
+\end{bmatrix}
+\end{displaymath}
+
+\end{frame}
 %
 \begin{frame}
-\frametitle{Esercizio 1}
+\frametitle{Esercizio 1 - vi}
+Poich\'e in generale la moltiplicazione tra matrici non \`e commutativa, cambia anche il risultato:
+\begin{displaymath}
+    N =
+\begin{bmatrix}
+  10 &  2 &  3 & -2 \\
+   0 &  5 &  0 &  2 \\
+  -7 &  4 & -3 &  3 \\
+   0 &  0 &  0 &  1
+\end{bmatrix}
+\end{displaymath}
+
+In generale \`e sempre necessario calcolare il risultato di un prodotto matrice-matrice
+quando cerchiamo di comporre due trasformazioni! Tuttavia esiste unaa eccezione che vedremo pi\`u avanti.
+
+\end{frame}
+%
+\begin{frame}
+\frametitle{Esercizio 2}
 \begin{itemize}
-    \item Creare un oggetto `dado' e traslarlo del vettore $[1, 1, 0]^T$.
-    \item Scrivere la matrice T che descrive la rotazione di 180 gradi intorno all'asse Z.
-    \item Applicare la matrice T calcolata in precedenza al dado traslato, usando il nodo
-        ``Generic Matrix''.
-    \item Scrivere una matrice di rotazione in cui l'angolo sia una variabile tempo-dipendente $t$. Inserire questa matrice in un nodo "Time Transform"
-        per verificare che il senso di rotazione sia quello corretto (rispetti la regola della mano destra).
+    \item Scrivere la matrice $S$ che descrive la scalatura con parametri $S_x = 0.5$, $S_y = 0.5$, $S_z = 1$.
+    \item Scrivere la matrice $R$ che descrive la rotazione di $90^\circ$ intorno l'asse Y.
+    \item Calcolare la matrice $M = R S$.
+    \item Usando il \frnzplt, creare una primitiva `piramide' e applicare la trasformazione rappresentata dalla matrice $M$.
+    \item Verificare che la trasformazione $M$ corrisponde all'applicare \textbf{prima} una scalatura e \textbf{poi} una rotazione.
+    \item Cosa succederebbe se invece applicassimo prima la rotazione e poi la scalatura? 
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{Esercizio 1 - i}
-Matrice generica di rotazione intorno l'asse Z:
-\begin{equation*}
-R_z(\theta) = 
+\frametitle{Esercizio 2 - i}
+Matrice di scalatura S:
+\begin{displaymath}
+S = 
 \begin{bmatrix}
-\mbox{cos}(\theta) & - \mbox{sin}(\theta) & 0\\
-\mbox{sin}(\theta) & \mbox{cos}(\theta)   & 0\\ 
-0 & 0 & 1 
+    0.5 & 0   & 0   & 0 \\
+      0 & 0.5 & 0   & 0 \\
+      0 & 0   & 1   & 0 \\
+      0 & 0   & 0   & 1 
 \end{bmatrix}
-\end{equation*}
-    Nel nostro caso, $\theta = \pi$. Andiamo quindi a sostituire per ottenere
-\begin{equation*}
-T = 
+\end{displaymath}
+
+Matrice di rotazione R:
+\begin{displaymath}
+R = 
 \begin{bmatrix}
-\mbox{cos}(\pi) & - \mbox{sin}(\pi) & 0\\
-\mbox{sin}(\pi) & \mbox{cos}(\pi)   & 0\\ 
-0 & 0 & 1 
+    \mbox{cos}(\nicefrac{\pi}{2}) & 0 & \mbox{sin}(\nicefrac{\pi}{2}) & 0\\
+        0 & 1 & 0 & 0 \\
+        \shortminus \mbox{sin}(\nicefrac{\pi}{2}) & 0 & \mbox{cos}(\nicefrac{\pi}{2}) & 0 \\
+    0 & 0 & 0 & 1 
 \end{bmatrix}
-\end{equation*}
-    Sappiamo anche che $cos(\pi) = -1$ e $sin(\pi) = 0$.\\ 
-    La matrice che cerchiamo \`e quindi:
-\begin{equation*}
-T = 
+=
 \begin{bmatrix}
--1 & 0 & 0\\
-0 & -1  & 0\\ 
-0 & 0 & 1 
+        0 & 0 & 1 & 0\\
+        0 & 1 & 0 & 0 \\
+        \shortminus 1 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 1 
 \end{bmatrix}
-\end{equation*}
+\end{displaymath}
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 2 - ii}
+Matrice M:
+\begin{displaymath}
+M = 
+\begin{bmatrix}
+        0 & 0 & 1 & 0\\
+        0 & 1 & 0 & 0 \\
+        \shortminus 1 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 1 
+\end{bmatrix}
+\begin{bmatrix}
+    0.5 & 0   & 0   & 0 \\
+      0 & 0.5 & 0   & 0 \\
+      0 & 0   & 1   & 0 \\
+      0 & 0   & 0   & 1 
+\end{bmatrix}
+ = 
+\begin{bmatrix}
+        0 & 0 & 1 & 0\\
+        0 & 0.5 & 0 & 0 \\
+        \shortminus 0.5 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 1 
+\end{bmatrix}
+\end{displaymath}
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 2 - iii}
+\begin{center}
+\begin{tikzpicture}
+\node(img1){\includegraphics[width=0.8\textwidth]{\fig/lab3_es2_M.png}};
+\node(img2) at (img1.south east){\includegraphics[width=0.4\textwidth]{\fig/lab3_es2_result.png}};
+\end{tikzpicture}
+\end{center}
 \end{frame}
 
 %\begin{frame}
@@ -223,6 +310,42 @@ T =
 %\includegraphics[width=\textwidth]{\fig/lab2_es1_a.png}
 %\end{center}
 %\end{frame}
+\begin{frame}
+\frametitle{Esercizio 3}
+\begin{itemize}
+    \item Creare un oggetto di tipo `dado' che abbia lato di dimensione pari a 2.
+    \item Scrivere la matrice $M$ che descrive la rotazione di $90^\circ$ intorno alla retta 
+        che passa per il punto $S(1, 1, 1)$ ed \`e parallela all'asse X.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 3 - traccia di soluzione}
+Il nostro obiettivo \`e quello di ruotare il dado intorno a uno dei suoi lati, anzich\`e ruotarlo
+su se stesso.
+
+    \vspace{0.5cm}
+
+    \centering
+    \includegraphics[width=0.6\textwidth]{\fig/lab3_es3_line.png}
+
+Nell'immagine, la retta di cui parla l'esercizio \`e segnata in rosso
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Esercizio 3 - traccia di soluzione}
+Non abbiamo una formula per rotazioni intorno ad un asse generico. Tuttavia,
+in questo caso possiamo:
+    \begin{enumerate}
+        \item Traslare il dado di un vettore tale che il punto $S$ venga traslato sull'origine degli assi \\
+            $\Rightarrow$ In questa maniera, la retta rossa coincider\`a con l'asse X
+        \item Applicare una rotazione intorno l'asse X
+        \item Traslare nuovamente il dado riportando il punto $S$ alla sua posizione iniziale
+    \end{enumerate}
+
+\end{frame}
 
 \begin{frame}
 \frametitle{Esercizio 1 - ii}
