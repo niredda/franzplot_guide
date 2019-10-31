@@ -15,7 +15,7 @@
 \DeclareMathSymbol{\shortminus}{\mathbin}{AMSa}{"39}
 
 
-\title[Curve e Sup. - Lab 3]{Curve e Superfici per il Design \\ Laboratorio - 2}
+\title[Curve e Sup. - Lab 3]{Curve e Superfici per il Design \\ Laboratorio - 3}
 \author[Prof. Parolini]{Prof. Nicola Parolini}
 %\institute[dimat]{Long Inst.}
 \date{31 Ottobre 2019}
@@ -315,7 +315,7 @@ M =
 \begin{itemize}
     \item Creare un oggetto di tipo `dado' che abbia lato di dimensione pari a 2.
     \item Scrivere la matrice $M$ che descrive la rotazione di $90^\circ$ intorno alla retta 
-        che passa per il punto $S(1, 1, 1)$ ed \`e parallela all'asse X.
+        che passa per il punto $P(1, 1, 1)$ ed \`e parallela all'asse X.
 \end{itemize}
 \end{frame}
 
@@ -333,478 +333,271 @@ Nell'immagine, la retta di cui parla l'esercizio \`e segnata in rosso
 
 \end{frame}
 
-
 \begin{frame}
 \frametitle{Esercizio 3 - traccia di soluzione}
 Non abbiamo una formula per rotazioni intorno ad un asse generico. Tuttavia,
 in questo caso possiamo:
     \begin{enumerate}
-        \item Traslare il dado di un vettore tale che il punto $S$ venga traslato sull'origine degli assi \\
+        \item Traslare il dado di un vettore tale che il punto $P$ venga traslato sull'origine degli assi ($T_1$) \\
             $\Rightarrow$ In questa maniera, la retta rossa coincider\`a con l'asse X
-        \item Applicare una rotazione intorno l'asse X
-        \item Traslare nuovamente il dado riportando il punto $S$ alla sua posizione iniziale
+        \item Applicare una rotazione intorno l'asse X ($R$)
+        \item Traslare nuovamente il dado riportando il punto $P$ alla sua posizione iniziale ($T_2$)
     \end{enumerate}
 
+    La trasformazione cercata sar\`a quindi la composizione delle tre trasformazioni, e la
+    matrice che la rappresenta sar\`a $M= T_2 R T_1$.
 \end{frame}
 
 \begin{frame}
-\frametitle{Esercizio 1 - ii}
-\begin{center}
-\begin{tikzpicture}
-\node(img1){\includegraphics[width=0.85\textwidth]{\fig/lab2_es1_a.png}};
-\node(img2) at (img1.south east){\includegraphics[width=0.45\textwidth]{\fig/lab2_es1_b.png}};
-\end{tikzpicture}
-\end{center}
-\end{frame}
-
-\begin{frame}
-\frametitle{Esercizio 1 - iii}
-Riscriviamo la matrice, ma come angolo scriviamo la variabile $t$:
-\begin{equation*}
-\begin{bmatrix}
-\mbox{cos}(t) & - \mbox{sin}(t) & 0\\
-\mbox{sin}(t) & \mbox{cos}(t)   & 0\\ 
-0 & 0 & 1 
-\end{bmatrix}
-\end{equation*}
-e la inseriamo nel nodo ``Time Transform''
-
-    \vspace{0.2cm}
-\centering
-\includegraphics[width=0.5\textwidth]{\fig/lab2_es1_c.png}
-\end{frame}
-
-\begin{frame}
-\frametitle {Esercizio 2}
-\begin{itemize}
-    \item Creare un oggetto `dado' e traslarlo del vettore $v = [1, 1, 0]^T$.
-    \item Scrivere la matrice R che descrive la riflessione rispetto al piano passante per l'origine e avente vettore normale $v$
-    \item Applicare la matrice R al dado traslato, usando il nodo
-        ``Generic Matrix''.
-    \item Rappresentare il dado traslato, il dado riflesso e il piano di riflessione.
-    \item Scrivere la matrice $Q = \mathbb{I} - 2t\hat{v}\hat{v}^T$, con $t$ variabile tempo-dipendente. Inserire questa matrice in un nodo
-        ``Time Transform'' e animare la scena con $t$ che va da $0$ a $1$. Commentare il risultato.
-    \item Confrontare l'oggetto finale ottenuto in questo esercizio con quello ottenuto nell'esercizio precedente.
-\end{itemize}
-\end{frame}
-\begin{frame}
-\frametitle{ Esercizio 2 - i}
-    Matrice di riflessione generica (quando $\mathbf{n}$ \`e il \textbf{versore} normale)
-\begin{equation}
-F = \begin{bmatrix}
-      1 & 0 & 0\\
-      0 & 1 & 0\\
-      0 & 0 & 1
-    \end{bmatrix}
-    -2~\begin{bmatrix}
-    n_x \\
-    n_y \\
-    n_z
-    \end{bmatrix} 
-    ~\begin{bmatrix}
-    n_x & n_y & n_z
-    \end{bmatrix}
-\end{equation}
-    Nel nostro caso, $\mathbf{v}$ \`e il vettore normale, \textbf{non il versore!} \\
-    $\Rightarrow$ dobbiamo prima ricavare $\hat{v}$ versore!
-\end{frame}
-
-\begin{frame}
-\frametitle{ Esercizio 2 - ii}
-Ricordando la definizione:
-    \begin{equation*}
-    \hat{v} = \frac{\mathbf{v}}{\norm{\mathbf{v}}}
-    \end{equation*}
-calcoliamo
-    \begin{equation*}
-    \norm{\mathbf{v}} = \sqrt{1^2 + 1^2 + 0^2} = \sqrt{2}
-    \end{equation*}
-e otteniamo
-\begin{displaymath}
-\hat{v} =
-    \frac{1}{\sqrt{2}}
-    \begin{bmatrix}
-    1 \\
-    1 \\
-    0
-                \end{bmatrix}
-=  \begin{bmatrix}
-    \nicefrac{1}{\sqrt{2}}\\
-    \nicefrac{1}{\sqrt{2}}\\
-                0
-                \end{bmatrix}
-\end{displaymath}
-\end{frame}
-
-\begin{frame}
-\frametitle{ Esercizio 2 - iii}
-La matrice di riflessione cercata diventa dunque:
-\begin{displaymath}
-\mathcal{R} =  \begin{bmatrix}
-                1 & 0 & 0\\
-                0  & 1 & 0\\
-                0 & 0 & 1
-                \end{bmatrix}
-    -2~\begin{bmatrix}
-    \nicefrac{1}{\sqrt{2}} \\
-    \nicefrac{1}{\sqrt{2}} \\
-    0
-    \end{bmatrix} 
-    ~\begin{bmatrix}
-    \nicefrac{1}{\sqrt{2}} & \nicefrac{1}{\sqrt{2}} & 0
-    \end{bmatrix}
-\end{displaymath}
-
-\begin{displaymath}
-\mathcal{R} =  \begin{bmatrix}
-                1 & 0 & 0\\
-                0  & 1 & 0\\
-                0 & 0 & 1
-                \end{bmatrix}
-    -2~\begin{bmatrix}
-                \nicefrac{1}{2} & \nicefrac{1}{2}  & 0\\
-                \nicefrac{1}{2} & \nicefrac{1}{2}  & 0\\
-                0 & 0 & 0
-                \end{bmatrix}
-\end{displaymath}
-
-\begin{displaymath}
-\mathcal{R} =  \begin{bmatrix}
-                1 & 0 & 0\\
-                0  & 1 & 0\\
-                0 & 0 & 1
-                \end{bmatrix}
-    -\begin{bmatrix}
-                1 & 1 & 0\\
-                1 & 1 & 0\\
-                0 & 0 & 0
-                \end{bmatrix}
- =  \begin{bmatrix}
-                0 & -1 & 0\\
-                -1 & 0 & 0\\
-                0 & 0 & 1
-                \end{bmatrix}
-\end{displaymath}
-\end{frame}
-
-\begin{frame}
-\frametitle{Esercizio 2 - iv}
-\begin{center}
-\begin{tikzpicture}
-\node(img1){\includegraphics[width=0.85\textwidth]{\fig/lab2_es2_a.png}};
-\node(img2) at (img1.south east){\includegraphics[width=0.45\textwidth]{\fig/lab2_es2_b.png}};
-\end{tikzpicture}
-\end{center}
-\end{frame}
-
-\begin{frame}
-\frametitle{ Esercizio 2 - v}
-    Il calcolo di $Q = \mathbb{I} - 2t\hat{v}\hat{v}^T$ \`e molto simile, dobbiamo solo stare attenti a $t$:
-\begin{displaymath}
-Q =  \begin{bmatrix}
-                1 & 0 & 0\\
-                0  & 1 & 0\\
-                0 & 0 & 1
-                \end{bmatrix}
-    -2t\begin{bmatrix}
-    \nicefrac{1}{\sqrt{2}} \\
-    \nicefrac{1}{\sqrt{2}} \\
-    0
-    \end{bmatrix} 
-    ~\begin{bmatrix}
-    \nicefrac{1}{\sqrt{2}} & \nicefrac{1}{\sqrt{2}} & 0
-    \end{bmatrix}
-\end{displaymath}
-
-\begin{displaymath}
-Q =  \begin{bmatrix}
-                1 & 0 & 0\\
-                0  & 1 & 0\\
-                0 & 0 & 1
-                \end{bmatrix}
-    -2t\begin{bmatrix}
-                \nicefrac{1}{2} & \nicefrac{1}{2}  & 0\\
-                \nicefrac{1}{2} & \nicefrac{1}{2}  & 0\\
-                0 & 0 & 0
-                \end{bmatrix}
-\end{displaymath}
-
-\begin{displaymath}
-Q =  \begin{bmatrix}
-                1 & 0 & 0\\
-                0  & 1 & 0\\
-                0 & 0 & 1
-                \end{bmatrix}
-    -\begin{bmatrix}
-                t & t & 0\\
-                t & t & 0\\
-                0 & 0 & 0
-                \end{bmatrix}
- =  \begin{bmatrix}
-                1 - t & -t & 0\\
-                -t & 1 - t & 0\\
-                0 & 0 & 1
-                \end{bmatrix}
-\end{displaymath}
-\end{frame}
-
-\begin{frame}
-\frametitle{Esercizio 2 - vi}
-    Confrontiamo questo risultato (sx) con quello precedente (dx)
-    \begin{center}
-\includegraphics[width=0.9\textwidth]{\fig/lab2_es2_comparison.png}
-    \end{center}
-    Il dado si trova nella stessa posizione, ma le facce sono orientate
-    in maniera diversa. La riflessione ne ha cambiato l'ordine! \\
-    Ruotando la scena ottenuta in questo esercizio si pu\`o verificare che l'ordine nel dado originale \`e
-    2-3-5-4, nel dado riflesso \`e 2-4-5-3.
-\end{frame}
-
-\begin{frame}
-\frametitle{Esercizio 3}
-        Dati i due vettori $\mathbf{u} = [0, 1, 2]^T$ e $\mathbf{v} = [0, -3, 1]^T$:
-\begin{itemize}
-    \item Determinare se i due vettori siano paralleli.
-    \item Determinare se i due vettori siano perpendicolari tra loro.
-    \item Rappresentare nel \frnzplt i due vettori, spiccandoli entrambi dall'origine degli assi.
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-
 \frametitle{Esercizio 3 - i}
- $\mathbf{u} \parallelsum \mathbf{v} \quad \Leftrightarrow \quad \exists t \in \mathbb R, t\neq 0,\ \text{tale che } \mathbf u = t\mathbf v$
+Voglio che il punto $P$ vada in $O$ origine degli assi: devo traslare del vettore
+$\overrightarrow{PO}$.
+\begin{displaymath}
+    \overrightarrow{PO}
+    = 
+\begin{bmatrix}
+        0 - P_x\\
+        0 - P_y\\
+        0 - P_z
+\end{bmatrix}
+    = 
+\begin{bmatrix}
+        - 1\\
+        - 1\\
+        - 1
+\end{bmatrix}
+\end{displaymath}
+Quindi la matrice di traslazione in coordinate omogenee sar\`a:
 
-\begin{equation*}
- \left\{
- \begin{array}{l}
-  u_x = t\cdot v_x \\
-  u_y = t\cdot v_y \\
-  u_z = t\cdot v_z
- \end{array}
- \right. 
- \quad \rightarrow \quad
-  \left\{
- \begin{array}{l}
-  0 = 0\ t \\
-  1 = -3\ t \\
-  2 = 1\ t
- \end{array}
- \right.
- \quad \rightarrow \quad
-  \left\{
- \begin{array}{l}
-  \mathit{nessuna\ informazione} \\
-  t = \nicefrac{-1}{3} \\
-  t = 2
- \end{array}
- \right.
-\end{equation*}
-La seconda e terza equazione sono in contraddizione, pertanto non esiste alcuna $t$ che soddisfi il sistema lineare \\
-$\Rightarrow$ $\mathbf{u}$ e $\mathbf{v}$ non sono paralleli.
+\begin{displaymath}
+T_1 = 
+\begin{bmatrix}
+        1 & 0 & 0 & -1\\
+        0 & 1 & 0 & -1\\
+        0 & 0 & 1 & -1\\
+        0 & 0 & 0 & 1 
+\end{bmatrix}
+\end{displaymath}
 \end{frame}
 
 \begin{frame}
-
 \frametitle{Esercizio 3 - ii}
-$\mathbf{u} \perp \mathbf{v} \quad \Leftrightarrow \quad \mathbf u \cdot \mathbf v = 0$
-
+La matrice R \`e una comune matrice di rotazione intorno all'asse X. \\
+Ricordando che $cos(\nicefrac{\pi}{2}) = 0$ e $sin(\nicefrac{\pi}{2}) = 1$, abbiamo:
 \begin{displaymath}
-\mathbf u \cdot \mathbf v =  \begin{bmatrix}
-                0 \\
-                1 \\
-                2 
-                \end{bmatrix}
-    \cdot \begin{bmatrix}
-                0 \\
-                -3\\
-                1
-                \end{bmatrix}
+R
+= 
+\begin{bmatrix}
+    1 & 0 & 0 & 0 \\
+    0 &\mbox{cos}(\nicefrac{\pi}{2}) & -\mbox{sin}(\nicefrac{\pi}{2}) & 0\\
+    0 &\mbox{sin}(\nicefrac{\pi}{2}) & \mbox{cos}(\nicefrac{\pi}{2})  & 0\\ 
+    0 & 0 & 0 & 1
+\end{bmatrix}
+= 
+\begin{bmatrix}
+    1 & 0 & 0 & 0 \\
+    0 & 0 & \shortminus 1 & 0\\
+    0 & 1 & 0 & 0\\ 
+    0 & 0 & 0 & 1
+\end{bmatrix}
 \end{displaymath}
-
-\begin{displaymath}
-\mathbf u \cdot \mathbf v
- =  0 \cdot 0 + 1 \cdot (-3) + 2 \cdot 1 = -1
-\end{displaymath}
-Poich\'e il prodotto scalare dei due vettori \`e diverso da zero, sappiamo
-che essi non sono perpendicolari.
 \end{frame}
 
 \begin{frame}
 \frametitle{Esercizio 3 - iii}
-\vspace{-0.5cm}
-\begin{center}
-\includegraphics[width=0.50\textwidth]{\fig/lab2_es3_a.png}
-\includegraphics[width=0.35\textwidth]{\fig/lab2_es3_b.png}
-\end{center}
-\vspace{-0.25cm}
-Notare come da alcune angolazioni i vettori potrebbero sembrare perpendicolari
-anche se in realt\`a non lo sono.
-\end{frame}
-
-\begin{frame}
-\frametitle{Esercizio 4}
-        Dati i seguenti punti con relative coordinate: $A(1, 0, 1)$, $B(0, 2, 2)$, $C(1, 1, 3)$ e $D(2, -1, 2)$
-\begin{itemize}
-    \item Calcolare i vettori $\overrightarrow{AB}$ e $\overrightarrow{CD}$.
-    \item Determinare se i due vettori siano paralleli.
-    \item Rappresentare i due vettori nel \frnzplt.
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Esercizio 4 - i}
-Determiniamo i due vettori:
+Per l'ultimo step, voglio la traslazione che riporta lo spigolo del dado nella posizione
+iniziale, quindi voglio andare dal punto $O$ in $P$
+$\overrightarrow{OP}$.
 \begin{displaymath}
-\overrightarrow{AB} =  \begin{bmatrix}
-                B_x - A_x \\
-                B_y - A_y \\
-                B_z - A_z 
-                \end{bmatrix}
-    = \begin{bmatrix}
-                -1 \\
-                2 \\
-                1
-                \end{bmatrix}
-\qquad
-\overrightarrow{CD} =  \begin{bmatrix}
-                D_x - C_x \\
-                D_y - C_y \\
-                D_z - C_z 
-                \end{bmatrix}
-    = \begin{bmatrix}
-                1 \\
-                -2 \\
-                -1
-                \end{bmatrix}
+    \overrightarrow{PO}
+    = 
+\begin{bmatrix}
+        P_x - 0\\
+        P_y - 0\\
+        P_z - 0
+\end{bmatrix}
+    = 
+\begin{bmatrix}
+        1\\
+        1\\
+        1
+\end{bmatrix}
 \end{displaymath}
-
-e proseguiamo impostando il sistema lineare come in precedenza:
-
-$\overrightarrow{AB} \parallelsum \overrightarrow{CD} \quad \Leftrightarrow \quad \exists t \in \mathbb R, t\neq 0,\ \text{t.c. } \overrightarrow{AB} = t \overrightarrow{CD}$
-
-\begin{equation*}
-  \left\{
- \begin{array}{l}
-  -1 = 1\ t \\
-  2 = -2\ t \\
-  1 = -1\ t
- \end{array}
- \right.
- \quad \rightarrow \quad
-  \left\{
- \begin{array}{l}
-  t = -1 \\
-  t = -1 \\
-  t = -1
- \end{array}
- \right.
-\end{equation*}
-\vspace{0.5cm}
-
-Poich\'e $t=-1$ soddisfa tutte le equazioni del sistema, possiamo affermare che
-$\overrightarrow{AB}$ e $\overrightarrow{CD}$ sono paralleli.
-\end{frame}
-
-\begin{frame}
-\frametitle{Esercizio 4 - ii}
-\vspace{-0.5cm}
-\begin{center}
-\includegraphics[width=0.50\textwidth]{\fig/lab2_es4_a.png}
-\includegraphics[width=0.45\textwidth]{\fig/lab2_es4_b.png}
-\end{center}
-\vspace{-0.25cm}
-Per disegnare correttamente i vettori, \`e fondamentale spiccarli correttamente!\\ ($\overrightarrow{AB}$ parte da A, $\overrightarrow{CD}$ parte da C!)
-\end{frame}
-
-\begin{frame}
-\frametitle{Esercizio 5}
-    Dati i due vettori $\mathbf{u} = [1, 1, -2]^T$ e $\mathbf{v} = [0.5, -0.5, -0.5]^T$:
-\begin{itemize}
-    \item Calcolare il vettore $\mathbf{w} = \mathbf u \times \mathbf v$
-    \item Rappresentare nel \frnzplt i tre vettori, con l'origine degli assi come punto di applicazione.
-    \item Rappresentare nel \frnzplt il piano passante per l'origine e avente normale $\mathbf w$.
-        Verificare che $\mathbf u$ e $\mathbf v$ giacciono sul piano.
-    \item Cosa cambierebbe se anzich\'e $\mathbf w$ usassimo $\tilde{\mathbf{w}} = \mathbf v \times \mathbf u$?
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Esercizio 5 - i}
-Ricordiamo la formula generica per il calcolo del prodotto vettore:
-\begin{displaymath}
-\mathbf a \times \mathbf b = 
-\left[ \begin{array}{c} a_y b_z - b_y a_z \\ b_x a_z - a_x b_z \\ a_x b_y - b_x a_y \end{array} \right]
-\end{displaymath}
-Nel nostro caso:
-\begin{displaymath}
-\mathbf u \times \mathbf v = 
-    \left[ \begin{array}{c} 
-        1 \cdot (\shortminus 0.5) - (\shortminus 0.5) \cdot (\shortminus 2) \\
-        0.5 \cdot (\shortminus 2) - 1 \cdot (\shortminus 0.5) \\
-        1 \cdot (\shortminus 0.5) - (0.5) \cdot 1
-    \end{array} \right]
-=
-    \left[ \begin{array}{c} 
-        \shortminus 0.5 - 1 \\
-        \shortminus 1 + 0.5 \\
-        \shortminus 0.5 - 0.5
-    \end{array} \right]
-=
-    \left[ \begin{array}{c} 
-        \shortminus 1.5 \\
-        \shortminus 0.5 \\
-        \shortminus 1
-    \end{array} \right]
-\end{displaymath}
-
-Abbiamo quindi trovato il risultato che cercavamo:
+Quindi la matrice di traslazione in coordinate omogenee sar\`a:
 
 \begin{displaymath}
-\mathbf w = 
-    \left[ \begin{array}{c} 
-        \shortminus 1.5 \\
-        \shortminus 0.5 \\
-        \shortminus 1
-    \end{array} \right]
+T_2 = 
+\begin{bmatrix}
+        1 & 0 & 0 & 1\\
+        0 & 1 & 0 & 1\\
+        0 & 0 & 1 & 1\\
+        0 & 0 & 0 & 1 
+\end{bmatrix}
 \end{displaymath}
-
-\vspace{0.5cm}
-
 \end{frame}
 
 \begin{frame}
-\frametitle{Esercizio 5 - ii}
+\frametitle{Esercizio 3 - iv}
+Componiamo ora le tre trasformazioni per ottenere il risultato richiesto. Come gi\`a detto, $M = T_2 R T_1$.
+Dobbiamo moltiplicare 3 matrici, iniziamo moltiplicando le due pi\`u a destra;
+    per comodit\`a chiamiamo questo risultato intermedio $M_1$:
+\begin{displaymath}
+M_1    
+    =
+    R T_1
+    =
+\begin{bmatrix}
+    1 & 0 &  0 & 0 \\
+    0 & 0 & -1 & 0\\
+    0 & 1 &  0 & 0\\ 
+    0 & 0 &  0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+        1 & 0 & 0 & -1 \\
+        0 & 1 & 0 & -1 \\
+        0 & 0 & 1 & -1 \\
+        0 & 0 & 0 & 1 
+\end{bmatrix}
+\end{displaymath}
+
+    \begin{displaymath}
+   M_1 = 
+\begin{bmatrix}
+    1 & 0 &  0 & -1 \\
+    0 & 0 & -1 &  1 \\
+    0 & 1 &  0 & -1 \\ 
+    0 & 0 &  0 &  1
+\end{bmatrix}
+\end{displaymath}
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 3 - v}
+Eseguiamo ora una ulteriore moltiplicazione matrice-matrice per completare il calcolo di $M$:
+\begin{displaymath}
+M    
+    =
+    T_2 R T_1
+    =
+    T_2 M_1
+    =
+\begin{bmatrix}
+    1 & 0 &  0 & 1 \\
+    0 & 1 &  0 & 1 \\
+    0 & 0 &  1 & 1 \\ 
+    0 & 0 &  0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+    1 & 0 &  0 & -1 \\
+    0 & 0 & -1 &  1 \\
+    0 & 1 &  0 & -1 \\ 
+    0 & 0 &  0 &  1
+\end{bmatrix}
+\end{displaymath}
+
+    \begin{displaymath}
+   M = 
+\begin{bmatrix}
+    1 & 0 &  0 &  0 \\
+    0 & 0 & -1 &  2 \\
+    0 & 1 &  0 &  0 \\ 
+    0 & 0 &  0 &  1
+\end{bmatrix}
+\end{displaymath}
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 3 - vi}
+    \vspace{-0.75cm}
 \begin{center}
 \begin{tikzpicture}
-\node(img1){\includegraphics[width=0.8\textwidth]{\fig/lab2_es5_a.png}};
-\node(img2) at (img1.east){\includegraphics[width=0.25\textwidth]{\fig/lab2_es5_b.png}};
+\node(img1){\includegraphics[width=0.8\textwidth]{\fig/lab3_es3_final_graph.png}};
+\node(img2) at (img1.south east){\includegraphics[width=0.4\textwidth]{\fig/lab3_es3_final_dice.png}};
 \end{tikzpicture}
 \end{center}
 \end{frame}
 
 \begin{frame}
-\frametitle{Esercizio 5 - iii}
-Dalla teoria sappiamo che
-\begin{displaymath}
-\mathbf{b} \times \mathbf{a} = - (\mathbf{a} \times \mathbf{b})
-\end{displaymath}
-ovvero invertendo l'ordine del prodotto vettoriale otteniamo un vettore con i segni opposti rispetto al precedente.
+\frametitle{Esercizio 3 - note}
+    Nel calcolo di $M_1$ abbiamo composto \textbf{prima} una traslazione e \textbf{poi} una rotazione;
+    abbiamo dovuto svolgere la moltiplicazione.
+    
+    Nel calcolo di $M$ invece la abbiamo composto \textbf{prima} una certa trasformazione e \textbf{poi} una traslazione.
+    Quando l'ultima trasformazione applicata \`e una traslazione, abbiamo una scorciatoia! Siano date
 
 \begin{displaymath}
-\tilde{\mathbf w} = 
-\shortminus \mathbf w = 
-    \left[ \begin{array}{c} 
-        1.5 \\
-        0.5 \\
-        1
-    \end{array} \right]
+    A = 
+\begin{bmatrix}
+    a_{11} & a_{12} & a_{13} & a_{14} \\
+a_{21} & a_{22} & a_{23} & a_{24} \\
+a_{31} & a_{32} & a_{33} & a_{34} \\
+0      &    0   &  0     & 1 
+\end{bmatrix}
+    \quad
+    T = 
+\begin{bmatrix}
+    1 & 0 & 0 & t_x \\
+    0 & 1 & 0 & t_y \\
+    0 & 0 & 1 & t_z \\
+0      &    0   &  0     & 1 
+\end{bmatrix}
 \end{displaymath}
-
-\vspace{0.5cm}
-
-Dal punto di vista geometrico, significa che il vettore ha stesso modulo e direzione, ma verso opposto.
+Allora
+\begin{displaymath}
+T A
+    =  
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13} & a_{14} + t_x\\
+a_{21} & a_{22} & a_{23} & a_{24} + t_y\\
+a_{31} & a_{32} & a_{33} & a_{34} + t_z\\
+0      &    0   &  0     & 1 
+\end{bmatrix}
+\end{displaymath}
 
 \end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 3 - note}
+Nel nostro caso specifico:
+\begin{displaymath}
+   M_1 = 
+\begin{bmatrix}
+    1 & 0 &  0 & \shortminus 1 \\
+    0 & 0 & \shortminus 1 &  1 \\
+    0 & 1 &  0 & \shortminus 1 \\ 
+    0 & 0 &  0 &  1
+\end{bmatrix}
+\quad
+T_2 = 
+\begin{bmatrix}
+        1 & 0 & 0 & 1\\
+        0 & 1 & 0 & 1\\
+        0 & 0 & 1 & 1\\
+        0 & 0 & 0 & 1 
+\end{bmatrix}
+\end{displaymath}
+\begin{displaymath}
+M    
+    =
+    T_2 M_1
+    =
+\begin{bmatrix}
+    1 & 0 &  0 & (\shortminus 1 + 1) \\
+    0 & 0 & \shortminus 1 & (1 + 1) \\
+    0 & 1 &  0 & (\shortminus 1 + 1) \\ 
+    0 & 0 &  0 &  1
+\end{bmatrix}
+   = 
+\begin{bmatrix}
+    1 & 0 &  0 &  0 \\
+    0 & 0 & \shortminus 1 &  2 \\
+    0 & 1 &  0 &  0 \\ 
+    0 & 0 &  0 &  1
+\end{bmatrix}
+\end{displaymath}
+
+Sottolineiamo che questo \`e possibile \textbf{solo se la traslazione viene applicata dopo} l'altra generica trasformazione.
+\end{frame}
+
 
 \end{document}

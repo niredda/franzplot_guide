@@ -1,31 +1,25 @@
 [nodes]
-	[nodes.8]
-		position = [365.00000000000000, 486.00000000000000]
-		row_2 = "0, (t<1)?1:(t<1+pi/2)?cos(t-1):0, (t<1)?0:(t<1+pi/2)?-sin(t-1):-1, (t<1)?-t:(t<1+pi/2)?-cos(t-1)+sin(t-1):t-pi/2"
+	[nodes.6]
+		color = [0.28582760691642761, 0.95588237047195435, 0.30582919716835022]
+		thickness = 0.10000000149011612
+		type = "renderer"
+		position = [923.00000000000000, 29.000000000000000]
+		[[nodes.6.inputs]]
+			geometry = "1"
+	[nodes.2]
+		position = [390.00003051757812, -13.000000000000000]
+		row_2 = "0, 0, -1, 2"
 		row_4 = "0, 0, 0, 1"
-		type = "time_transform"
-		row_1 = "1, 0, 0, (t<1)?-t:(t<1+pi/2)?-1:-2+t-pi/2"
-		row_3 = "0, (t<1)?0:(t<1+pi/2)?sin(t-1):1, (t<1)?1:(t<1+pi/2)?cos(t-1):0, (t<1)?-t:(t<1+pi/2)?-cos(t-1)-sin(t-1):t-2-pi/2"
-	[nodes.5]
-		position = [181.00000000000000, 343.00000000000000]
-		end = "10"
-		type = "interval"
-		parameter = "f"
-		subdivisions = 32
-		begin = "-10"
-	[nodes.4]
-		fz = "1"
-		fy = "1"
-		fx = "f"
-		type = "curve"
-		position = [467.00003051757812, 335.00000000000000]
-		[[nodes.4.inputs]]
-			interval = "5"
-	[nodes.0]
-		size = "2"
-		kind = "dice"
-		type = "primitive"
-		position = [215.00003051757812, 115.00000000000000]
+		type = "matrix"
+		row_1 = "1, 0, 0, 0"
+		row_3 = "0, 1, 0, 0"
+	[nodes.1]
+		type = "transform"
+		position = [713.00000000000000, 18.000000000000000]
+		[[nodes.1.inputs]]
+			geometry = "0"
+		[[nodes.1.inputs]]
+			matrix = "2"
 	[nodes.7]
 		color = [1.0000000000000000, 0.073529422283172607, 0.073529422283172607]
 		thickness = 0.029999999329447746
@@ -44,3 +38,30 @@
 			geometry = "0"
 		[[nodes.3.inputs]]
 			time_transform = "8"
+	[nodes.0]
+		size = "2"
+		kind = "dice"
+		type = "primitive"
+		position = [215.00003051757812, 115.00000000000000]
+	[nodes.4]
+		fz = "1"
+		fy = "1"
+		fx = "f"
+		type = "curve"
+		position = [467.00003051757812, 335.00000000000000]
+		[[nodes.4.inputs]]
+			interval = "5"
+	[nodes.8]
+		position = [365.00000000000000, 486.00000000000000]
+		row_2 = "0,  (t<1)?1:(t<1+pi/2)?cos(t-1):0,  (t<1)?0:(t<1+pi/2)?-sin(t-1):-1,  (t<1)?-t:(t<1+pi/2)?-cos(t-1)+sin(t-1):t-pi/2"
+		row_4 = "0,  0,  0,  1"
+		type = "time_transform"
+		row_1 = "1,  0,  0,  (t<1)?-t:(t<1+pi/2)?-1:-2+t-pi/2"
+		row_3 = "0,  (t<1)?0:(t<1+pi/2)?sin(t-1):1,  (t<1)?1:(t<1+pi/2)?cos(t-1):0,  (t<1)?-t:(t<1+pi/2)?-cos(t-1)-sin(t-1):t-2-pi/2"
+	[nodes.5]
+		position = [181.00000000000000, 343.00000000000000]
+		end = "10"
+		type = "interval"
+		parameter = "f"
+		subdivisions = 32
+		begin = "-10"
