@@ -89,10 +89,10 @@ La matrice M risultante sar\`a una matrice $4\times4$, e dobbiamo calcolarla ele
 \begin{displaymath}
     M =
 \begin{bmatrix}
-    M_{11} & M_{12} & M_{13} & M_{14} \\
-    M_{21} & M_{22} & M_{23} & M_{24} \\
-    M_{31} & M_{32} & M_{33} & M_{34} \\
-    M_{41} & M_{42} & M_{43} & M_{44}
+    m_{11} & m_{12} & m_{13} & m_{14} \\
+    m_{21} & m_{22} & m_{23} & m_{24} \\
+    m_{31} & m_{32} & m_{33} & m_{34} \\
+    m_{41} & m_{42} & m_{43} & m_{44}
 \end{bmatrix}
 \end{displaymath}
 
@@ -101,13 +101,13 @@ La matrice M risultante sar\`a una matrice $4\times4$, e dobbiamo calcolarla ele
 \begin{frame}
 \frametitle{Esercizio 1 - ii}
 
-    L'elemento $M_{ij}$, ovvero quel numero contenuto nella matrice M e posizionato nella \textbf{riga i} e nella
+    L'elemento $m_{ij}$, ovvero quel numero contenuto nella matrice M e posizionato nella \textbf{riga i} e nella
     \textbf{colonna j}, \`e il \textbf{prodotto scalare} dei vettori \textbf{riga i-esima di A} e \textbf{colonna j-esima di B}
 
 
 Vediamo il calcolo di alcuni elementi di matrice:
 \begin{displaymath}
-    M_{11} =
+    m_{11} =
 \begin{bmatrix}
     1 &  2 &  0 &  0
 \end{bmatrix}
@@ -125,7 +125,7 @@ Vediamo il calcolo di alcuni elementi di matrice:
 \frametitle{Esercizio 1 - iii}
 
 \begin{displaymath}
-    M_{21} =
+    m_{21} =
 \begin{bmatrix}
     -2 & 1 &  0 &  1
 \end{bmatrix}
@@ -139,7 +139,7 @@ Vediamo il calcolo di alcuni elementi di matrice:
 
 
 \begin{displaymath}
-    M_{23} =
+    m_{23} =
 \begin{bmatrix}
     -2 & 1 &  0 &  1
 \end{bmatrix}
@@ -187,7 +187,7 @@ Svolgendo tutti i calcoli, giungiamo al risultato:
 
 Per il calcolo di N, cambia l'ordine delle matrici da moltiplicare!
 \begin{displaymath}
-    R =
+    N = B A =
 \begin{bmatrix}
    1 &  0 &  3 &  1 \\
    2 &  1 &  0 &  1 \\
@@ -218,17 +218,17 @@ Poich\'e in generale la moltiplicazione tra matrici non \`e commutativa, cambia 
 \end{displaymath}
 
 In generale \`e sempre necessario calcolare il risultato di un prodotto matrice-matrice
-quando cerchiamo di comporre due trasformazioni! Tuttavia esiste unaa eccezione che vedremo pi\`u avanti.
+quando cerchiamo di comporre due trasformazioni! Tuttavia esiste una eccezione che vedremo pi\`u avanti.
 
 \end{frame}
 %
 \begin{frame}
 \frametitle{Esercizio 2}
 \begin{itemize}
-    \item Scrivere la matrice $S$ che descrive la scalatura con parametri $S_x = 0.5$, $S_y = 0.5$, $S_z = 1$.
+    \item Scrivere la matrice $S$ che descrive la scalatura con \\ $S_x = 0.5$, $S_y = 0.5$, $S_z = 1$.
     \item Scrivere la matrice $R$ che descrive la rotazione di $90^\circ$ intorno l'asse Y.
     \item Calcolare la matrice $M = R S$.
-    \item Usando il \frnzplt, creare una primitiva `piramide' e applicare la trasformazione rappresentata dalla matrice $M$.
+    \item Usando il \frnzplt, creare una primitiva `cono' e applicare la trasformazione rappresentata dalla matrice $M$.
     \item Verificare che la trasformazione $M$ corrisponde all'applicare \textbf{prima} una scalatura e \textbf{poi} una rotazione.
     \item Cosa succederebbe se invece applicassimo prima la rotazione e poi la scalatura? 
 \end{itemize}
