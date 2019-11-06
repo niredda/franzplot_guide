@@ -15,117 +15,165 @@
 \setbeamercolor{block title}{#3}
 \begin{block}{#1}}{\end{block}}
 \newcommand{\frnzplt}{FranzPlot }
-\title[Curve e Sup. - Lab 4]{Curve e Superfici per il Design \\ Laboratorio 4: Rette e piani nello spazio}
-\author[Prof.ssa Scotti]{Prof.ssa Anna Scotti}
+\DeclareMathSymbol{\shortminus}{\mathbin}{AMSa}{"39}
+
+\title[Curve e Sup. - Lab 3]{Curve e Superfici per il Design \\ Laboratorio - 3}
+\author[Prof. Parolini]{Prof. Nicola Parolini}
 %\institute[dimat]{Long Inst.}
-\date{14 Maggio 2019}
+\date{7 Novembre 2019}
 
 \begin{document}
-%\lstset{language=POV}
-\begin{frame}
-\maketitle
-\end{frame}
-\section{Introduzione}
+
 \begin{frame}
 \frametitle{Materiali}
-Nella con i materiale di oggi troverete:
+Il materiale per l'esercitazione di oggi:
 \begin{itemize}
-\item Questa presentazione (\texttt{lab4.pdf})
-\end{itemize}
-Nella cartella `Franzplot\_DCS' troverete invece:
-\begin{itemize}
-\item Gli eseguibili per lanciare \frnzplt
+\item Questa presentazione \\ (\texttt{Materiale Didattico/Laboratori/lab 4/lab4\_testo.pdf});
+%\item Il file \texttt{es\_dado\_ref.toml} con l'esercizio risolto della passata esercitazione.
+\item L'eseguibile del \frnzplt \\ (\texttt{Software/Franzplot 19.08 - Windows.exe})
 \end{itemize}
 \end{frame}
-%\section{Matrici in POVRay}
+
+Per il calcolo della rappresentazione parametrica di una retta abbiamo bisogno di
+un punto per cui passa la retta e di un vettore direttore.
 
 \section{Esercizi}
 \begin{frame}
-\frametitle{Esercizio 1-i}
+\frametitle{Esercizio 1}
+Dati i punti
+$$
+\mathbf{P}=\left[
+\begin{array}{c}
+0\\
+-2\\
+-1
+\end{array}
+\right]
+\qquad
+\mathbf{R}=\left[
+\begin{array}{c}
+3\\
+-1\\
+2
+\end{array}
+\right] \qquad
+\mathbf{S}=\left[
+\begin{array}{c}
+-2\\
+1\\
+0
+\end{array}
+\right] 
+$$
+si calcolino:
+    \begin{itemize}
+    \item una rappresentazione parametrica della retta $r$ \\ passante per $\mathbf{P}$ e $\mathbf{R}$.
+    \item una rappresentazione parametrica della retta $s$ \\ passante per $\mathbf{P}$ e $\mathbf{S}$.
+    \end{itemize}
+    
+Le due rette sono perpendicolari?
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 1 - i}
+
+La rappresentazione di $r$ e $s$ non sono uniche; la pi\`u immediata per $r$ sar\`a:
 \begin{itemize}
-
-\item Rappresentare con \frnzplt il piano $\alpha$, i vettori giacitura e la normale al piano.
-\begin{displaymath}
-\alpha:
-\begin{cases}
-u + v\\
-u\\
-u+2~v
-\end{cases}
-\;\;\; u,v \in \mathbb{R}
-\end{displaymath}
-\item Rappresentare con \frnzplt il piano $\beta$, i vettori giacitura e la normale al piano.
-\begin{displaymath}
-\beta:
-\begin{cases}
-u + v+2\\
-u\\
-u+2~v-1
-\end{cases}
-\;\;\; u,v \in \mathbb{R}
-\end{displaymath}
-\item
-Determinare la retta perpendicolare al piano $\beta$ dell'esercizio 2 e passante per il punto $\mathbf{P}$:
-\begin{displaymath}
-\mathbf{P} = \begin{bmatrix} 1\\ 0\\-2 \end{bmatrix}
-\end{displaymath}
+        \item vettore direttore $\overrightarrow{PR}$
+        \item retta passante per $P$
 \end{itemize}
-
-
+Dai dati ricaviamo che:
+$$
+\overrightarrow{PR} = \left[
+\begin{array}{c}
+3\\
+1\\
+3
+\end{array}
+\right]
+\qquad
+\mathbf P = \left[
+\begin{array}{c}
+0\\
+-2\\
+-1
+\end{array}
+\right]
+$$
+quindi 
+$$r: \quad \left\{
+\begin{array}{rcl}
+x&=&3t+0\\
+y&=&1t-2\\
+z&=&3t-1
+\end{array}
+\right. \quad t\in \mathbb{R}
+$$
 \end{frame}
+
 \begin{frame}
-\frametitle{Esercizio  1 - ii}
-\begin{columns}
-\begin{column}{0.48\textwidth}
-\begin{displaymath}
-\mathbf{v}_1=
-\begin{bmatrix}
-1\\1\\1
-\end{bmatrix}
-\end{displaymath}
-\begin{displaymath}
-\mathbf{v}_1=
-\begin{bmatrix}
-1\\0\\2
-\end{bmatrix}
-\end{displaymath}
-\end{column}
-\begin{column}{0.48\textwidth}
-\begin{displaymath}
-\mathbf{n} =
-\mbox{det}
-\begin{bmatrix}
-\mathbf{e}_1 & \mathbf{e}_2 & \mathbf{e}_3\\
-1 & 1 & 1 \\
-1 & 0 & 2
-\end{bmatrix}
-=
-\begin{bmatrix}
-2\\-1\\-1
-\end{bmatrix}
-\end{displaymath}
-\end{column}
-\end{columns}
+\frametitle{Esercizio 1 - ii}
+
+Alla stessa maniera, per $s$ scegliamo:
 \begin{itemize}
-\item Il piano $\beta$ ha la stessa normale del piano $\alpha$ ma non passa dell'origine, ma \`e traslata del vettore $\mathbf{p}=[2,0,-1]^T$
+        \item vettore direttore $\overrightarrow{PS}$
+        \item retta passante per $P$
 \end{itemize}
+Dai dati ricaviamo che:
+$$
+\overrightarrow{PS} = \left[
+\begin{array}{c}
+-2\\
+3\\
+1
+\end{array}
+\right]
+\qquad
+\mathbf P = \left[
+\begin{array}{c}
+0\\
+-2\\
+-1
+\end{array}
+\right]
+$$
+quindi 
+$$s: \quad \left\{
+\begin{array}{rcl}
+x&=&\shortminus 2t+0\\
+y&=&\ 3t-2\\
+z&=&\ 1t-1
+\end{array}
+\right. \quad t\in \mathbb{R}
+$$
 
+Nota: le rappresentazioni non sono uniche! Esempio: come termine noto
+per $r$ avremmo potuto usare il punto $\mathbf R$, e per $s$ il punto $\mathbf S$.
 \end{frame}
+
 \begin{frame}
-\frametitle{Esercizio 1 - iii}
-\includegraphics[width=0.9\textwidth]{\fig/l4_es1.jpeg}
+\frametitle{Esercizio 1-ii}
+Affinch\'e due rette siano perpendicolari, esse devono essere incidenti e le loro direzioni
+devono formare un angolo retto.
+
+    \vspace{0.4cm}
+In questo caso sappiamo gi\`a che le rette hanno il punto $\mathbf P$ in comune, quindi sappiamo
+che sono incidenti. Verifichiamo se le direzioni formano un angolo retto:
+\begin{displaymath}
+\overrightarrow{PR} \cdot \overrightarrow{PS}
+    =
+\begin{bmatrix} 3 \\ 1 \\3 \end{bmatrix}\cdot \begin{bmatrix}\shortminus 2\\ 3 \\1 \end{bmatrix} =
+    \shortminus 6 + 3 + 3 = 0
+\end{displaymath}
+
+Possiamo quindi concludere che le rette sono perpendicolari.
 \end{frame}
 
-%
-\begin{frame}[fragile]
-\frametitle{Esercizio 1 - iv}
-\includegraphics[width=0.9\textwidth]{\fig/l4_es1c.jpeg}
-
-\end{frame}
+    
 %
 %
 \begin{frame}
-\frametitle{Esercizio 2 - i}
+\frametitle{Esercizio 2}
 \begin{itemize}
 \item Rappresentare la retta $r$ passante per i punti
 \begin{displaymath}
@@ -136,50 +184,111 @@ Determinare la retta perpendicolare al piano $\beta$ dell'esercizio 2 e passante
 \begin{displaymath}
 \mathbf{M}=\begin{bmatrix}1\\2\\-2 \end{bmatrix}.
 \end{displaymath}
-\item Rappresentare il piano su cui giacciono i tre punti
 \end{itemize}
 \end{frame}
+
 \begin{frame}
-\frametitle{Esercizio 2 - ii}
+\frametitle{Esercizio 2 - i}
 \begin{columns}
 \begin{column}{0.48\textwidth}
+\begin{itemize}
+\item Vettore direttore \\ della retta $r$:
+\end{itemize}
+\end{column}
+\begin{column}{0.58\textwidth}
+\begin{displaymath}
+\overrightarrow{PQ} =\begin{bmatrix}\shortminus 1 \\ 0 \\ 2 \end{bmatrix}
+    \quad
+    \mathit{oppure}
+    \quad
+\overrightarrow{QP} =\begin{bmatrix}1 \\0 \\ \shortminus 2 \end{bmatrix}
+\end{displaymath}
+\end{column}
+\end{columns}
+\begin{columns}
+\begin{column}{0.58\textwidth}
 \begin{itemize}
 \item Rappresentazione della retta $r$:
 \end{itemize}
 \end{column}
 \begin{column}{0.48\textwidth}
 \begin{displaymath}
-r :\begin{cases} x = t +1\\ y = 1 \\z = -2~t+3 \end{cases}
+r :\begin{cases} x = -t +1\\ y = 1 \\z = 2t+3 \end{cases}
 \end{displaymath}
 \end{column}
 \end{columns}
-\begin{columns}
-\begin{column}{0.48\textwidth}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 2 - ii}
+Se voglio trovare una retta perpendicolare a $r$ che passa per $\mathbf M$, devo trovare un punto
+$\mathbf H \in r$ tale che $\overrightarrow{MH} \perp \overrightarrow{PQ}$
+
+\vspace{0.4cm}
+    $\mathbf H$ incognito, so solo che appartiene a $r$!
 \begin{itemize}
-\item Vettore che congiunge $\mathbf{M}$ ed un punto generico di $r$
+    \item ma se appartiene a $r$, allora $\mathbf H = r(\tilde{t})$
+    \item $\mathbf H :\begin{cases} \mathbf H_x = -\tilde t +1\\ \mathbf H_y = 1 \\ \mathbf H_z = 2 \tilde t+3 \end{cases}$
 \end{itemize}
-\end{column}
-\begin{column}{0.48\textwidth}
+
+\vspace{0.4cm}
+$$
+\overrightarrow{MH}
+    =
+    \mathbf H - \mathbf M
+    =
+    \begin{bmatrix}\shortminus \tilde t + 1\\ 1 \\ 2 \tilde t+3 \end{bmatrix} - \begin{bmatrix}1 \\ 2 \\ \shortminus 2 \end{bmatrix}
+    =
+    \begin{bmatrix}\shortminus \tilde t \\ \shortminus 1 \\ 2 \tilde t+5 \end{bmatrix}
+$$
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 2 - iii}
 \begin{displaymath}
-\mathbf{M} - r(t) = \begin{bmatrix} -t\\ 1 \\2t-5 \end{bmatrix}
+\overrightarrow{MH} \perp \overrightarrow{PQ} 
+    \Rightarrow  
+\overrightarrow{MH} \cdot \overrightarrow{PQ} = 0  
 \end{displaymath}
-\end{column}
-\end{columns}
-\begin{columns}
-\begin{column}{0.29\textwidth}
+Scritto in forma vettoriale:
+$$
+    \begin{bmatrix}\shortminus \tilde t \\ \shortminus 1 \\ 2 \tilde t+5 \end{bmatrix}
+        \cdot
+    \begin{bmatrix}\shortminus 1 \\ 0 \\ 2 \end{bmatrix} = 0
+$$
+Svolgo il prodotto scalare, ottengo una equazione in $\tilde t$
+$$
+    \tilde t + 0 + 4 \tilde t + 10 = 0 \quad \Rightarrow \quad 5 \tilde t = \shortminus 10
+$$
+    Quindi, il valore del parametro che cercavo \`e $\tilde t = \shortminus 2$!
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 2 - iv}
+Il problema richiedeva di trovare una parametrizzazione di $s$. Scegliamo:
 \begin{itemize}
-\item Imponendo
+        \item vettore direttore $\overrightarrow{MH}$
+        \item retta passante per $M$
 \end{itemize}
-\end{column}
-\begin{column}{0.4\textwidth}
-\begin{displaymath}
-\begin{bmatrix} -t \\ 1 \\2t-5 \end{bmatrix}\cdot \begin{bmatrix}1\\ 0 \\-2 \end{bmatrix} = 0
-\end{displaymath}
-\end{column}
-\begin{column}{0.29\textwidth}
-trovo $t = 2$.
-\end{column}
-\end{columns}
+
+Per trovare i valori del vettore $\overrightarrow{MH}$, vado a sostituire il valore ricavato
+per $\tilde t$:
+$$
+\overrightarrow{MH}
+    =
+    \begin{bmatrix}\shortminus \tilde t \\ \shortminus 1 \\ 2 \tilde t+5 \end{bmatrix}
+\Rightarrow
+\tilde t = \shortminus 2
+\Rightarrow
+\overrightarrow{MH}
+    =
+    \begin{bmatrix}2 \\ \shortminus 1 \\ 1\end{bmatrix}
+        \qquad
+    \mathbf M
+    =
+    \begin{bmatrix}1 \\ 2 \\ \shortminus 2 \end{bmatrix}
+$$
 \begin{columns}
 \begin{column}{0.48\textwidth}
 \begin{itemize}
@@ -190,42 +299,16 @@ trovo $t = 2$.
 \begin{displaymath}
 s:
 \begin{cases}
-x  = -2t + 1 \\
-y  =  t  + 2 \\
-z  = -t  - 2
+x  = 2t + 1 \\
+y  = \shortminus t  + 2 \\
+z  = \ t  - 2
 \end{cases}
 \end{displaymath}
 \end{column}
 \end{columns}
 \end{frame}
 %
-\begin{frame}
-\frametitle{Esercizio 2 - iii}
-Date le espressioni di $r$ ed $s$, una rappresentazione parametrica del piano \`e : 
-\begin{displaymath}
-\beta:\begin{cases}
-x = -2u-v +3\\
-y = u+1\\
-z = -u+2v-1
-\end{cases}
-\end{displaymath}
-Il vettore normale pu\`o calcolarsi come il prodotto vettoriale dei due vettori giacitura:
 
-\begin{displaymath}
-\mathbf{n} =
-\mbox{det}
-\begin{bmatrix}
-\mathbf{e}_1 & \mathbf{e}_2 & \mathbf{e}_3\\
--2 & 1 & -1 \\
--1 & 0 & 2
-\end{bmatrix}
-=
-\begin{bmatrix}
-2\\5\\1
-\end{bmatrix}
-\end{displaymath}
-\end{frame}
-%
 \begin{frame}
 \frametitle{Esercizio 2 - iv}
 \begin{center}
