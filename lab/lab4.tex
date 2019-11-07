@@ -5,6 +5,7 @@
 \usepackage{tikz}
 \usepackage{listings}
 \usepackage{color}
+\usepackage{nicefrac}
 \usetikzlibrary{matrix}
 \usetheme{boxes}
 \newcommand{\fig}{./figures} % common figure path
@@ -40,7 +41,7 @@ Il materiale per l'esercitazione di oggi:
 \begin{frame}
 \frametitle{Riepilogo}
     Per scrivere una retta in forma parametrica necessito di un \textbf{vettore direttore}
-    e di un \textbf{punto appartente alla retta} (a volte chiamato \textit{termine noto}.
+    e di un \textbf{punto appartente alla retta} (a volte chiamato \textit{termine noto}).
 
     \vspace{0.2cm}
     Sia $\mathbf v$ il vettore direttore e sia $\mathbf P$ il punto appartenente alla retta,
@@ -58,10 +59,324 @@ Il materiale per l'esercitazione di oggi:
     \`E sempre importante specificare l'intervallo di appartenenza.
 \end{frame}
 
+\begin{frame}
+    \frametitle{Rette in \frnzplt}
+    Per disegnare una qualsiasi curva parametrica in \frnzplt introduciamo i nodi \texttt{Geometries > Interval} e \texttt{Parameters > Interval}.
+
+    \vspace{0.25cm}
+    Il nodo \texttt{Interval} ci permette di definire il nome del parametro e l'intervallo cui appartiene.
+
+    \vspace{0.25cm}
+    Nel nodo \texttt{Curve} andiamo a inserire le coordinate $x$, $y$ e $z$ in funzione del parametro usato nel nodo \texttt{Interval}. Prendiamo ad esempio
+    la seguente curva:
+
+$$
+r: \quad \left\{
+\begin{array}{lcr}
+x&=&3t+1\\
+y&=&t-3\\
+z&=&-2t
+\end{array}
+\right.
+    \quad t\in \left[ \shortminus 10, 10 \right]
+$$
+    \end{frame}
+    
+\begin{frame}
+    \frametitle{Rette in \frnzplt}
+    Per visualizzare questa curva, creeremo il seguente grafo:
+\includegraphics[width = 0.9\textwidth]{\fig/lab4_intro.png}
+    L'output del nodo \texttt{Curve} \`e una Geometria, e come tale possiamo applicargli trasformazioni o animazioni.
+
+    Una curva \`e una una Geometria 1D, possiamo usare lo slider \texttt{thickness} per modificare lo spessore usato nella visualizzazione.
+
+    \vspace{0.5cm}
+    Nota: nel nodo \texttt{Interval} non \`e possibile selezionare l'intero $\mathbb R$, quindi per \textbf{visualizzare} le rette scegliamo sempre un intervallo
+    con valori sufficientemente grandi.
+
+    \end{frame}
+
 \section{Esercizi}
+\begin{frame}
+    \frametitle{Esercizio 1}
+
+Date le seguenti rette nello spazio si calcoli, se esiste, il punto di intersezione:
+
+$$
+r:\left\{
+\begin{array}{l}
+x=3t+1\\
+y=t-3\\
+z= -2t
+\end{array}
+\right ., \qquad w:\left\{
+\begin{array}{l}
+x=s+3\\
+y=4\\
+z=-s+5
+\end{array}
+\right .
+$$
+
+    con $t, s \in \mathbb R$
+
+    (Suggerimento: voglio che $r_x = w_x, \quad r_y = w_y, \quad r_z = w_z$)
+    
+    \vspace{1cm}
+    Le rette sono perpendicolari?
+
+    \end{frame}
+    
+\begin{frame}
+    \frametitle{Esercizio 1 - i}
+
+    Quando voglio trovare l'intersezione tra due curve \textit{qualsiasi}, devo imporre che
+    i valori delle coordinate $x$, $y$ e $z$ siano uguali.
+$$\left\{\begin{array}{l}
+          3t+1=s+3\\
+          t-3=4\\
+          -2t=-s+5
+         \end{array}\right.
+$$
+
+    Risolvo il sistema lineare: \\
+        $\Rightarrow$ \textbf{Se} trovo una soluzione, allora le rette si intersecano in un punto.
+$$
+    \left\{\begin{array}{l}
+          3t+1=s+3\\
+          t=7\\
+          s=2t+5
+         \end{array}\right . 
+$$
+\end{frame}
 
 \begin{frame}
-\frametitle{Esercizio 1}
+    \frametitle{Esercizio 1 - ii}
+    Ho ricavato il valore di $t$, lo sostituisco nella terza riga per trovare $s$
+$$
+    \left\{\begin{array}{l}
+          3t+1=s+3\\
+          t=7\\
+          s=2\cdot7+5 = 19
+         \end{array}\right . 
+$$
+    E per finire sostituisco $t$ e $s$ nella prima riga: \textbf{devo} essere sicuro che anche la prima equazione sia soddisfatta
+$$
+    \left\{\begin{array}{l}
+          3\cdot7 + 1 = 19 + 3 \\
+          t=7\\
+          s=19
+         \end{array}\right . 
+    \quad
+    \left\{\begin{array}{l}
+          22=22\\
+          t= 7\\
+          s= 19
+         \end{array}\right . 
+$$
+
+Posso confermare che le rette si intersecano.
+Sostituisco $t=7$ nella retta $r$ per ottenere l'intersezione: $P=(22,4,-14)$.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 1 - iii}
+
+Se guardiamo i vettori direttori, abbiamo:
+$$
+\mathbf{v} = \left[
+\begin{array}{c}
+3\\
+1\\
+-2
+\end{array}
+\right]
+\qquad
+    \mathbf{u} = \left[
+\begin{array}{c}
+1\\
+4\\
+-1
+\end{array}
+\right]
+$$
+
+Controlliamo se le direzioni formano un angolo retto:
+$$
+    \mathbf{v} \cdot \mathbf{u}
+    =
+    \left[
+\begin{array}{c}
+3\\
+1\\
+-2
+\end{array}
+\right]
+\cdot
+\left[
+\begin{array}{c}
+1\\
+4\\
+-1
+\end{array}
+\right]
+= 3 + 4 + 2 = 9
+$$
+Quindi le rette non sono perpendicolari.
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 2}
+
+Siano assegnate le rette $r$ e $s$ di equazione
+$$
+r: \quad \left\{
+\begin{array}{lcr}
+x&=&3t-3\\
+y&=&t-2\\
+    z&=&-2t+4
+\end{array}
+\right. \qquad \qquad s: \quad \left\{
+\begin{array}{lcr}
+x&=&t\\
+y&=&t-1\\
+z&=&2t-2
+\end{array}
+\right.
+$$
+
+    \begin{itemize}
+    \item $r$ ed $s$ sono perpendicolari? 
+    \item Si visualizzino le rette $r$ e $s$ usando \frnzplt
+    \end{itemize}
+    
+    \vspace{0.75cm}
+    (Reminder: due rette sono perpendicolari se sono incidenti e le loro direzioni formano un angolo retto)
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 2 - i}
+
+Se guardiamo i vettori direttori, abbiamo:
+$$
+\mathbf{v} = \left[
+\begin{array}{c}
+3\\
+1\\
+-2
+\end{array}
+\right]
+\qquad
+    \mathbf{u} = \left[
+\begin{array}{c}
+1\\
+1\\
+2
+\end{array}
+\right]
+$$
+
+Controlliamo se le direzioni formano un angolo retto:
+$$
+\mathbf{v} = \left[
+\begin{array}{c}
+3\\
+1\\
+-2
+\end{array}
+\right]
+\cdot
+    \mathbf{u} = \left[
+\begin{array}{c}
+1\\
+1\\
+2
+\end{array}
+\right]
+= 1 + 3 - 4 = 0
+$$
+Le direzioni formano un angolo retto.
+In 2D questo sarebbe sufficiente a garantire che le rette siano perpendicolari,
+mentre in 3D \textbf{dobbiamo sempre controllare che le rette abbiano un punto in comune}.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 2 - ii}
+Nota: \`e necessario cambiare ``nome'' del parametro della seconda retta!
+$$
+\left\{
+\begin{array}{rcl}
+    3t-3 &=& s\\
+    t-2 &=& s-1\\
+    -2t+4&=&2s -2
+\end{array}
+\right.
+$$
+
+Metto in evidenza $s$ dalla prima equazione e la sostituisco nella seconda e terza riga
+$$
+\left\{
+\begin{array}{l}
+    s = 3t-3\\
+    t-2 = s-1\\
+    -2t+4=2s -2
+\end{array}
+\right.
+\quad
+\left\{
+\begin{array}{l}
+    s = 3t-3\\
+    t-2 = 3t - 3 -1\\
+    -2t+4=6t - 6 -2
+\end{array}
+\right.
+$$
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 2 - iii}
+Svolgo le somme e sposto i termini in $t$ a sinistra:
+$$
+\left\{
+\begin{array}{l}
+    s=3t-3\\
+    2t=2\\
+    8t=12
+\end{array}
+\right.
+\quad
+\left\{
+\begin{array}{l}
+    s=3t-3\\
+    t=1\\
+    t=\nicefrac{3}{2}
+\end{array}
+\right.
+$$
+
+    \vspace{0.75cm}
+La seconda e terza riga evidenziano che il sistema lineare non ha soluzione, quindi
+le due rette non si intersecano! \\
+    $\Rightarrow$ Le due rette non sono perpendicolari, sono sghembe.
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 2 - iv}
+
+    \vspace{-1cm}
+\begin{center}
+\begin{tikzpicture}
+\node(img1){\includegraphics[width=0.8\textwidth]{\fig/lab4_es1_graph.png}};
+\node(img2) at (img1.south west){\includegraphics[width=0.4\textwidth]{\fig/lab4_es1_scene.png}};
+\end{tikzpicture}
+\end{center}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 3}
 Dati i punti
 $$
 \mathbf{P}=\left[
@@ -97,7 +412,7 @@ Le due rette sono perpendicolari?
 \end{frame}
 
 \begin{frame}
-\frametitle{Esercizio 1 - i}
+\frametitle{Esercizio 3 - i}
 
 La rappresentazione di $r$ e $s$ non sono uniche; la pi\`u immediata per $r$ sar\`a:
 \begin{itemize}
@@ -134,7 +449,7 @@ $$
 \end{frame}
 
 \begin{frame}
-\frametitle{Esercizio 1 - ii}
+\frametitle{Esercizio 3 - iii}
 
 Alla stessa maniera, per $s$ scegliamo:
 \begin{itemize}
@@ -174,7 +489,7 @@ per $r$ avremmo potuto usare il punto $\mathbf R$, e per $s$ il punto $\mathbf S
 \end{frame}
 
 \begin{frame}
-\frametitle{Esercizio 1-ii}
+\frametitle{Esercizio 3 - ii}
 Affinch\'e due rette siano perpendicolari, esse devono essere incidenti e le loro direzioni
 devono formare un angolo retto.
 
@@ -195,7 +510,7 @@ Possiamo quindi concludere che le rette sono perpendicolari.
 %
 %
 \begin{frame}
-\frametitle{Esercizio 2}
+\frametitle{Esercizio 4}
 \begin{itemize}
 \item Rappresentare la retta $r$ passante per i punti
 \begin{displaymath}
@@ -210,7 +525,7 @@ Possiamo quindi concludere che le rette sono perpendicolari.
 \end{frame}
 
 \begin{frame}
-\frametitle{Esercizio 2 - i}
+\frametitle{Esercizio 4 - i}
 \begin{columns}
 \begin{column}{0.48\textwidth}
 \begin{itemize}
@@ -227,10 +542,12 @@ Possiamo quindi concludere che le rette sono perpendicolari.
 \end{displaymath}
 \end{column}
 \end{columns}
+    \vspace{1cm}
 \begin{columns}
 \begin{column}{0.58\textwidth}
 \begin{itemize}
-\item Rappresentazione della retta $r$:
+\item Rappresentazione della retta $r$:\\
+    (usando $\overrightarrow{PQ}$ e $\mathbf Q$)
 \end{itemize}
 \end{column}
 \begin{column}{0.48\textwidth}
@@ -243,7 +560,7 @@ r :\begin{cases} x = -t +1\\ y = 1 \\z = 2t+3 \end{cases}
 \end{frame}
 
 \begin{frame}
-\frametitle{Esercizio 2 - ii}
+\frametitle{Esercizio 4 - ii}
 Se voglio trovare una retta perpendicolare a $r$ che passa per $\mathbf M$, devo trovare un punto
 $\mathbf H \in r$ tale che $\overrightarrow{MH} \perp \overrightarrow{PQ}$
 
@@ -267,13 +584,13 @@ $$
 \end{frame}
 
 \begin{frame}
-\frametitle{Esercizio 2 - iii}
+\frametitle{Esercizio 4 - iii}
 \begin{displaymath}
 \overrightarrow{MH} \perp \overrightarrow{PQ} 
     \Rightarrow  
 \overrightarrow{MH} \cdot \overrightarrow{PQ} = 0  
 \end{displaymath}
-Scritto in forma vettoriale:
+Quindi:
 $$
     \begin{bmatrix}\shortminus \tilde t \\ \shortminus 1 \\ 2 \tilde t+5 \end{bmatrix}
         \cdot
@@ -287,7 +604,7 @@ $$
 \end{frame}
 
 \begin{frame}
-\frametitle{Esercizio 2 - iv}
+\frametitle{Esercizio 4 - iv}
 Il problema richiedeva di trovare una parametrizzazione di $s$. Scegliamo:
 \begin{itemize}
         \item vettore direttore $\overrightarrow{MH}$
@@ -332,90 +649,11 @@ z  = \ t  - 2
 %
 
 \begin{frame}
-\frametitle{Esercizio 2 - iv}
+\frametitle{Esercizio 4 - iv}
 \begin{center}
 \includegraphics[width = 0.9\textwidth]{\fig/l4_es2.jpeg}
 \end{center}
 \end{frame}
 %
-\begin{frame}
-\frametitle{Esercizio 3 - i}
-Con \frnzplt \`e possibile rappresentare un piano parametricamente, come una superficie qualsiasi.
-\begin{itemize}
-\item Rappresentare la retta $r$:
-\begin{displaymath}
-r:\begin{cases}
-x = t \\
-y = 0.5~t\\
-z = 0
-\end{cases}
-\end{displaymath}
-\item Rappresentare l'oggetto che si ottiene: 
-\begin{enumerate}
-\item Traslando la retta in direzione $y$ facendo variare il parametro della traslazione tra -5 e 5.
-\item Ruotanto rispetto a z la retta di $2\pi$ radianti.
-\end{enumerate}
-\end{itemize}
-\end{frame}
-\begin{frame}
-\frametitle{Esercizio 3 - ii}
-\begin{center}
-\includegraphics[width=0.5\textwidth]{\fig/l4_es3a.jpeg}
-\includegraphics[width=0.5\textwidth]{\fig/l4_es3b.jpeg}
-\end{center}
-\end{frame}
-\begin{frame}
-\frametitle{Esercizio 4 - i}
-Date le rette:
-\begin{columns}
-
-\begin{column}{0.33\textwidth}
-\begin{displaymath}
-p:\begin{cases} 
-x = 3~t - \frac{1}{2}\\
-y = t - \frac{1}{2}\\
-z = -2~t
-\end{cases}
-\end{displaymath}
-\end{column}
-\begin{column}{0.33\textwidth}
-\begin{displaymath}
-q:\begin{cases} 
-x = t - 13 \\
-y = 2\\
-z = -t + 15
-\end{cases}
-\end{displaymath}
-\end{column}
-\begin{column}{0.33\textwidth}
-\begin{displaymath}
-r:\begin{cases} 
-x = t + \frac{3}{2}\\
-y = t + \frac{1}{2}\\
-z = 2~t -2
-\end{cases}
-\end{displaymath}
-\end{column}
-\end{columns}
-\begin{itemize}
-\item Rappresentare le rette con \frnzplt
-\item Le rette $p$ e $q$ sono perpendicolari? E le rette $p$ ed $r$?
-\item Determinare e rappresentare i punti di intersezione se presenti
-\end{itemize}
-\end{frame}
-\begin{frame}
-\frametitle{Esercizio 4 - ii}
-\begin{itemize}
-\item Scrivere l'equazione del piano $\alpha$ con normale $\mathbf{n}=[1,1,1]^T$ passante per il punto $(1,0,0)$. Rappresentare il piano con \frnzplt
-\item Calcolare  e rappresentare i punti di intersezione di $p$ e $q$ con il piano.
-\item Calcolare e rappresentare il piano $\beta$ su cui giacciono  le rette $p$ e $q$, e  scrivere l'espressione parametrica della retta $s$ intersezione dei piani $\alpha$ e $\beta$ 
-\end{itemize}
-\end{frame}
-\begin{frame}
-\frametitle{Esercizio 4 - iii}
-\begin{center}
-\includegraphics[width=0.9\textwidth]{\fig/l4_es5final.jpeg}
-\end{center}
-\end{frame}
 
 \end{document}
