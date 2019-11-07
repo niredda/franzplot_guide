@@ -65,7 +65,7 @@ Il materiale per l'esercitazione di oggi:
 
 \begin{frame}
     \frametitle{Rette in \frnzplt}
-    Per disegnare una qualsiasi curva parametrica in \frnzplt introduciamo i nodi \texttt{Geometries > Interval} e \texttt{Parameters > Interval}.
+    Per disegnare una qualsiasi curva parametrica in \frnzplt introduciamo i nodi \texttt{Geometries > Curve} e \texttt{Parameters > Interval}.
 
     \vspace{0.25cm}
     Il nodo \texttt{Interval} ci permette di definire il nome del parametro e l'intervallo cui appartiene.
@@ -200,7 +200,7 @@ $$
     \mathbf{u} = \left[
 \begin{array}{c}
 1\\
-4\\
+0\\
 -1
 \end{array}
 \right]
@@ -221,11 +221,11 @@ $$
 \left[
 \begin{array}{c}
 1\\
-4\\
+0\\
 -1
 \end{array}
 \right]
-= 3 + 4 + 2 = 9
+= 3 + 0 + 2 = 5
 $$
 Quindi le rette non sono perpendicolari.
 \end{frame}
@@ -283,7 +283,8 @@ $$
 
 Controlliamo se le direzioni formano un angolo retto:
 $$
-\mathbf{v} = \left[
+\mathbf{v}  \cdot  \mathbf{u}
+    = \left[
 \begin{array}{c}
 3\\
 1\\
@@ -291,14 +292,14 @@ $$
 \end{array}
 \right]
 \cdot
-    \mathbf{u} = \left[
+ \left[
 \begin{array}{c}
 1\\
 1\\
 2
 \end{array}
 \right]
-= 1 + 3 - 4 = 0
+= 3 + 1 - 4 = 0
 $$
 Le direzioni formano un angolo retto.
 In 2D questo sarebbe sufficiente a garantire che le rette siano perpendicolari,
