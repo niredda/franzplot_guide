@@ -55,7 +55,7 @@ Vogliamo rappresentarla con \frnzplt attraverso l'elemento `parametric curve'.
 %
 
 \begin{frame}
-\frametitle{Esercizio 1: Curve con \frnzplt - i}
+\frametitle{Esercizio 1 - i}
     Come avevamo visto nel caso del plot di rette, anche oggi faremo uso dei seguenti nodi:
     \begin{itemize}
         \item \texttt{Geometries > Curve} 
@@ -68,7 +68,6 @@ Vogliamo rappresentarla con \frnzplt attraverso l'elemento `parametric curve'.
     all'inizio e la fine dell'intervallo.
 \end{frame}
 %
-
 \begin{frame}
 \frametitle{Esercizio 1 - ii}
 \begin{center}
@@ -87,16 +86,113 @@ Vogliamo rappresentarla con \frnzplt attraverso l'elemento `parametric curve'.
 
     Sia dato il punto $P(0, 1, 1)$.
     \begin{itemize}
-        \item Scrivere la generica matrice $R$ di rotazione intorno l'asse Z
+        \item Scrivere la generica matrice $R$ di rotazione intorno l'asse Z.
         \item Applicare a $P$ una trasformazione parametrica di rotazione intorno l'asse Z, con parametro $\theta \in [0, \pi]$,
             e scrivere la curva parametrica ottenuta. Di che curva si tratta?
         \item Rappresentare il punto $P$ e la curva ottenuta in \frnzplt.
-        \item Cosa cambierebbe se la rotazione fosse intorno l'asse Y? E se fosse intorno l'asse X?
-        \item Usando \frnzplt, ottenere la stessa curva applicando una trasformazione parametrica
+        \item Usando \frnzplt, disegnare la curva applicando al punto una matrice parametrica.
     \end{itemize}
 
 \end{frame}
 
+\begin{frame}
+\frametitle{Esercizio 2 - i}
+La matrice che rappresenta la trasformazione parametrica \`e la seguente:
+\begin{equation}
+R(\theta) = 
+\begin{bmatrix}
+    \mbox{cos}(\theta) & - \mbox{sin}(\theta) & 0 & 0\\
+    \mbox{sin}(\theta) & \mbox{cos}(\theta)   & 0 & 0\\ 
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1
+\end{bmatrix}
+\quad
+    \theta \in [0, \pi]
+\end{equation}
+
+    Per ottenere la curva dobbiamo moltiplicarla per il vettore che contiene le coordinate del punto: 
+    $$
+    c(\theta) = R(\theta) P
+    $$
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 2 - ii}
+Svolgendo i conti troviamo:
+\begin{equation}
+c(\theta) = 
+\begin{bmatrix}
+    \mbox{cos}(\theta) & - \mbox{sin}(\theta) & 0 & 0\\
+    \mbox{sin}(\theta) & \mbox{cos}(\theta)   & 0 & 0\\ 
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+    0 \\
+    1 \\
+    1 \\
+    1
+\end{bmatrix}
+ = 
+\begin{bmatrix}
+    -sin(\theta) \\
+    cos(\theta) \\
+    1 \\
+    1
+\end{bmatrix}
+\end{equation}
+Quindi possiamo scrivere la nostra curva:
+\begin{displaymath}
+    c(\theta):
+\begin{cases}
+    x = -sin(\theta) \\
+    y = cos(\theta) \\
+    z = 1 \\
+\end{cases}
+\quad
+    \theta \in [0, \pi]
+\end{displaymath}
+
+Poich\'e $\theta$ varia da $0$ a $\pi$, la curva \`e una semicirconferenza.
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 2 - iii}
+\begin{center}
+\begin{tikzpicture}
+\node(img1){\includegraphics[width=0.8\textwidth]{\fig/lab5_es2_graph.png}};
+\node(img2) at (img1.south west){\includegraphics[width=0.4\textwidth]{\fig/lab5_es2_scene.png}};
+\end{tikzpicture}
+\end{center}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 2 - iv}
+    Nel \frnzplt \`e possibile scrivere matrici parametriche e usare il nodo \texttt{Transform} per
+    applicare una trasformazione parametrica a una geometria 0D o 1D (punto o curva).
+
+    \begin{itemize}
+        \item Nota: non \`e possibile applicare trasformazioni parametriche a primitive come cubi, dadi, ecc
+    \end{itemize}
+
+    \vspace{1cm}
+    Per scrivere una trasformazione parametrica, \`e sufficiente usare il nodo
+    \texttt{Generic Matrix}, collegare in input l'\texttt{Interval} del parametro da usare,
+    e scrivere espressioni contenenti il parametro all'interno della matrice.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 2 - v}
+\begin{center}
+\includegraphics[width=\textwidth]{\fig/lab5_es2_param_transform.png}
+\end{center}
+
+    Come sempre il nome del parametro \`e arbitrario (\texttt{theta}, \texttt{t}, \texttt{r}, sono tutti validi).
+    L'importante \'e essere \textbf{consistenti}.
+\end{frame}
 %
 \begin{frame}
 \frametitle{Esercizio 3: Spirale conica}
