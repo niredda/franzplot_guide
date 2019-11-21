@@ -3,6 +3,7 @@
 \usepackage{amssymb}
 \usepackage{pgf}
 \usepackage{tikz}
+\usepackage{nicefrac}
 \usepackage{listings}
 \usepackage{color}
 \usetikzlibrary{matrix}
@@ -195,62 +196,253 @@ Poich\'e $\theta$ varia da $0$ a $\pi$, la curva \`e una semicirconferenza.
 \end{frame}
 %
 \begin{frame}
-\frametitle{Esercizio 3: Spirale conica}
-\includegraphics[width=0.5\textwidth]{\fig/cone_spiral.jpeg}\\
-Determinare la curva parametrica che descrive il filo avvolto sul cono (da \texttt{primitive}). 
+\frametitle{Esercizio 3}
+    Sia data la seguente curva parametrica:
+	\begin{displaymath}
+	\mathcal{C}:\begin{cases}
+	x(t)=  \nicefrac{1}{2} \ t \cos t\\
+	y(t)= 0 \\
+        z(t)= \nicefrac{1}{2} \ t \sin t
+	\end{cases}
+	\qquad 0 \leq t \leq 10 \pi
+	\end{displaymath}
+    \begin{itemize}
+        \item Dire di che tipo di curva si tratta.
+        \item Scrivere la matrice di scalatura $S$ che abbia parametri di scalatura $S_x = \nicefrac{1}{4}$, $S_y = 1$, $S_z = \nicefrac{1}{2}$.
+        \item Calcolare la curva $\mathcal{G}$ ottenuta applicando la trasformazione $S$ a $\mathcal{C}$.
+        \item Rappresentare le curve $\mathcal{C}$ e $\mathcal{G}$ in \frnzplt.
+        \item Verificare con \frnzplt il risultato ottenuto, applicando la trasformazione $S$ a $\mathcal{C}$.
+    \end{itemize}
 \end{frame}
+
 \begin{frame}
-\frametitle{Esercizio 3-ii}
-La curva \`e data dalla rotazione di un punto intorno all'asse, con raggio
-variabile, composta con una traslazione lungo lo stesso asse, quindi si tratta
-di un'elica conica.  
+\frametitle{Esercizio 3 - i}
+Scriviamo la matrice di scalatura richiesta:
+\begin{equation}
+S = 
+\begin{bmatrix}
+    \nicefrac{1}{4} &       0 & 0\\
+    0  & 1 & 0\\ 
+    0 & 0 & \nicefrac{1}{2} 
+\end{bmatrix}
+\end{equation}
+    Trattandosi di una scalatura, \`e immediato calcolare la curva $\mathcal{G}$:
 \begin{displaymath}
-\mathcal{C}:\begin{cases}
- x(t)= at\cos t\\
- y(t)=at \sin t\\
-  z(t)= ct + d \qquad t_I\leq t\leq 0
+    \mathcal{G}(t):
+\begin{cases}
+    x = \nicefrac{1}{8} \ t \cos t \\
+    y = 0 \\
+    z(t)= \nicefrac{1}{4} \ t \sin t
 \end{cases}
+\quad
+    t \in [0, 10 \pi]
 \end{displaymath}
-Il rapporto fra $a$ e $c$ \`e legato alla semiapertura del cono. Usiamo valori
-di $t$ negativi per disegnare il tratto inferiore dell'elica conica e $d$ per
-traslare il vertice lungo $z$.  
+
+Notiamo che, poich\`e S \`e una trasformazione NON parametrica,
+l'oggetto trasformato \`e rimasto una curva.
 \end{frame}
+
+%
 \begin{frame}
-\frametitle{Esercizio 4: Sole/Terra/Luna}
-L'equazione parametrica della circonferenza, ad esempio:
+\frametitle{Esercizio 3 - ii}
+\begin{center}
+\begin{tikzpicture}
+\node(img1){\includegraphics[width=0.8\textwidth]{\fig/lab5_es3_graph.png}};
+\node(img2) at (img1.south west){\includegraphics[width=0.5\textwidth]{\fig/lab5_es3_scene.png}};
+\end{tikzpicture}
+\end{center}
+    Poich\`e l'intervallo \`e parecchio ampio, si suggerisce di settare il parametro ``quality'' al massimo.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Esercizio 4 - Sole/Terra/Luna}
+	L'equazione parametrica della circonferenza (di raggio $a$):
+	\begin{displaymath}
+	\mathcal{C}:\begin{cases}
+	x(t)= a \cos t\\
+	y(t)= a \sin t\\
+	z(t)= 0
+	\end{cases}
+	\qquad 0 \leq t \leq 2 \pi
+	\end{displaymath}
+	\`e utile anche per descrivere l'orbita dei corpi celesti.
+	\begin{itemize}
+		\item Ponendo il Sole al centro del sistema di riferimento, scrivere le curve che descrivono il moto della Terra e della Luna rispetto al Sole e rappresentarle su \frnzplt.
+		\item Rappresentare il sistema Sole/Terra/Luna utilizzando punti e/o sfere e l'elemento \texttt{Time Transform}.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Esercizio 4 - i}
+	\begin{block}{Suggerimento}
+		Per ogni valore del parametro t, il moto della Luna rispetto al Sole pu\`o essere visto come:
+		\begin{displaymath}
+		\mathcal{C}_{LS}:\begin{cases}
+		x(t)= x_{TS}(t) + x_{LT}(t) \\
+		y(t)= y_{TS}(t) + y_{LT}(t)\\
+		z(t)= 0
+		\end{cases}
+		\end{displaymath}
+		dove $x_{TS}(t)$ e $y_{TS}(t)$ indicano il moto della Terra rispetto al Sole, mentre 
+		$x_{LT}(t)$ e $y_{LT}(t)$ indicano il moto della Luna rispetto alla Terra.
+
+                Non dimentichiamoci che la Luna ruota intorno alla Terra molto pi\`u velocemente di quanto la Terra ruoti intorno al sole!\\
+                (Circa 1 mese vs 1 anno)
+	\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 4 - risultato}
+\includegraphics[width=\textwidth]{\fig/sunsys.jpeg}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Esercizio 4 - ii}
+	
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			Se si indica con $R$ il raggio della circonferenza sulla quale la Terra si muove rispetto al Sole, l'equazione per descrivere il suo moto rispetto al Sole \`e:
+			\begin{displaymath}
+			\mathcal{C}_{TS}:\begin{cases}
+			x_{TS}(t)= R \cos(t)\\
+			y_{TS}(t)= R \sin(t)\\
+			z_{TS}(t)= 0
+			\end{cases}
+			\end{displaymath}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\includegraphics[width=.8\textwidth]{\fig/ex_sun_earth_moon.png}
+		\end{column}
+	\end{columns}
+\vspace{0.2cm}
+    Allo stesso modo, indicando con $r$ il raggio della circonferenza sulla quale la Luna si muove rispetto alla Terra,  l'equazione per descrivere il suo moto rispetto alla Terra (cio\`e se abbiamo la Terra all'origine degli assi), \`e:
+	\begin{displaymath}
+	\mathcal{C}_{LT}:\begin{cases}
+	x_{LT}(t)= r \cos(kt)\\
+	y_{LT}(t)= r \sin(kt)\\
+	z_{LT}(t)= 0
+	\end{cases}
+	\end{displaymath}
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 4 - iii}
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+Questo ci permette di esprimere la posizione della Luna nel sistema di riferimento del Sole come la posizione della Terra rispetto al Sole  pi\`u la posizione della Luna rispetto alla Terra (come suggerito):
+\end{column}
+\begin{column}{0.5\textwidth}
+\includegraphics[width=.8\textwidth]{\fig/ex_sun_earth_moon.png}
+\end{column}
+\end{columns}
+\vspace{0.4cm}
 \begin{displaymath}
-\mathcal{C}:\begin{cases}
- x(t)= a \cos t\\
- y(t)= a \sin t\\
+\mathcal{C}_{LS}:\begin{cases}
+ x(t)=  R \cos(t) + r \cos(kt)\\
+ y(t)=  R \sin(t) + r \sin(kt)\\
  z(t)= 0
 \end{cases}
+\qquad 0 \leq t \leq 2 n \pi
 \end{displaymath}
-\`e utile anche per descrivere l'orbita dei corpi celesti. \\
-Ponendo il sole al centro del sistema di riferimento, scrivere la curva che descrive il moto di un pianeta e di un suo satellite.\\
-\begin{block}{Suggerimento}
-Per ogni valore del parametro t, il moto del satellite rispetto al pianeta pu\`o essere visto come una rotazione
-attorno al centro degli assi traslato della posizione del pianeta.  
-\end{block}
-\begin{itemize}
-\item Rappresentare lo stesso sistema utilizzando punti e/o sfere ed il nodo \texttt{time transform}.
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Esercizio 4 - ii}
-
-\includegraphics[width=0.8\textwidth]{\fig/sunsys.jpeg}
-\\
-Una curva come quella in figura \`e  qualitativamente l'unico tipo di curva osservabile?
+dove $n =$ numero rivoluzioni della Terra attorno al Sole. \\
+\vspace{0.2cm}
+\textbf{Oss.} Poichè si vuole che la Luna ruoti più velocemente della Terra dev'essere necessariamente $k > 1$. In questo modo per una stessa $t$ la Luna avr\`a spazzato un angolo maggiore.
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Esercizio 5}
-
-\includegraphics[width=0.8\textwidth]{\fig/infty.jpeg}
-
-Determinare la forma della equazione parametrica che descrive questa curva. 
+	\frametitle{Esercizio 4 - iv} 
+	\begin{itemize}
+	\item Note le espressioni delle curve $\mathcal{C}_{TS}$ e $\mathcal{C}_{LS}$, non rimane che
+	decidere le lunghezze dei due raggi (per i quali, per ottenere un risultato
+	realistico, vorremmo $r<R$), e il valore di $k$.  
+	\item $k = 12$, ad esempio, \`e un valore realistico poich\'e come suggerito, il periodo di rivoluzione lunare \`e circa 1 mese, mentre il periodo di rivoluzione terrestre \`e circa un anno. Quindi la velocit\`a di rotazione della Luna sar\`a circa 12 volte pi\`u grande di quella della Terra.
+	\end{itemize}
 \end{frame}
+
+
+\begin{frame}
+	\frametitle{Esercizio 5 - Spirale conica}
+	
+	\begin{center}
+		\begin{tikzpicture}
+		\node(img1){\includegraphics[width=.65\textwidth]{\fig/l4_cone_helix}};
+		\end{tikzpicture}
+	\end{center}
+	Determinare la curva parametrica che descrive il filo avvolto sul cono (ottenuto da \texttt{Geometries $\rightarrow$ Primitive} con \texttt{Size} $=1$). 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Esercizio 5 - i}
+La curva \`e data dalla rotazione di un punto intorno all'asse, con raggio
+variabile, composta con una traslazione lungo lo stesso asse, quindi si tratta
+di un'elica conica, con valori di $t$ negativi perch\`e vogliamo il tratto inferiore dell'elica conica.
+	\begin{displaymath}
+	\mathcal{C}:\begin{cases}
+	x(t)= at\cos t\\
+	y(t)=at \sin t\\
+	z(t)= ct + d
+	\end{cases}
+	\qquad -2 n \pi \leq t\leq 0
+	\end{displaymath}
+	
+        Chiamiamo $h_z = 2 \pi c$ il passo dell'elica in direzione z e $h_{r} = 2 \pi a$ il passo dell'elica in direzione radiale.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Esercizio 5 - ii}
+        Dobbiamo determinare i parametri $a$, $c$, $n$, $d$ che ci diano il giusto passo in direzione radiale, passo in direzione z,
+        numero di avvolgimenti e traslazione lungo z dell'elica.
+	\begin{itemize}
+		\item Affinch\'e la punta della spirale e del cono coincidano, devo traslare l'origine degli assi e portarla sulla punta del cono. La punta del
+                    cono ha coordinate $P(0, 0, 0.5)$, quindi $d = 0.5$.
+		\item Il numero di avvolgimenti dell'elica $n$ pu\`o essere dedotto dalla figura dell'esercizio. Quindi $n = 10$.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Esercizio 5 - iii}
+	\begin{itemize}
+		\item Il passo in direzione z dell'elica moltiplicato per il numero di avvolgimenti \`e pari all'altezza del cono, nel nostro caso 1. Quindi:
+	\end{itemize}
+                \begin{gather*}
+		h_z n = 1 \Rightarrow 2 \pi c n = 1  \\
+                c = \frac{1}{2 \pi n} = \frac{1}{20 \pi}
+                \end{gather*}
+	\begin{itemize}
+		\item Il passo in direzione radiale dell'elica moltiplicato per il numero di avvolgimenti dà il raggio del cono, che è pari a 0.5. Quindi:
+	\end{itemize}
+		\begin{align*} 
+		h_r n = 0.5 \Rightarrow 2 \pi a n = 0.5 \\
+                    a = \frac{1}{4 \pi n} = \frac{1}{40 \pi}
+		\end{align*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Esercizio 5 - iv}
+        Andando a sostituire trovo l'equazione parametrica cercata:
+	\begin{displaymath}
+	\mathcal{C}:\begin{cases}
+            x(t)= \nicefrac{1}{(40\pi)}t \cos t\\
+            y(t)= \nicefrac{1}{(40\pi)}t \sin t\\
+            z(t)= \nicefrac{1}{(20\pi)}t + 0.5
+	\end{cases}
+	\qquad -2 n \pi \leq t\leq 0
+	\end{displaymath}
+
+        \textbf{NOTA:} Per rappresentare la curva in \frnzplt, impostare la \texttt{Quality} dell'intervallo al massimo valore consentito.
+	
+        \vspace{0.5cm}
+	\begin{itemize}
+                \item
+		\textbf{Oss.} Sfruttando la similitudine tra triangoli \`e possibile dedurre che il rapporto
+                tra raggio e altezza del cono \`e pari al rapporto tra passo in direzione radiale e in z dell'elica. Nel nostro caso:
+		\begin{displaymath}
+			\frac{R_C}{H_C} = \frac{h_r}{h_z} = \frac{a}{c} = \frac{1}{2}
+		\end{displaymath}
+	\end{itemize}
+\end{frame}
+
 
 \end{document}
