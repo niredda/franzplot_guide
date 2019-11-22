@@ -43,15 +43,16 @@ Nella cartella con il materiale di oggi troverete:
 \frametitle{Esercizio 1: Curve con \frnzplt - Il comando parametric curve}
 Sia data la seguente curva:
 \begin{displaymath}
-c:
+\mathcal C:
 \begin{cases}
-    x = cos(t)\\
-    y = 2 sin(t)\\
+    x = \cos t\\
+    y = 2 \sin t \\
     z = 0.5
 \end{cases}
+    \quad
+    t \in [0, 2\pi]
 \end{displaymath}
-    con $t \in [0, 2\pi]$. \\
-Vogliamo rappresentarla con \frnzplt attraverso l'elemento `parametric curve'.
+    Vogliamo rappresentarla con \frnzplt usando il nodo \texttt{Curve}.
 \end{frame}
 %
 
@@ -77,7 +78,7 @@ Vogliamo rappresentarla con \frnzplt attraverso l'elemento `parametric curve'.
 \node(img2) at (img1.south){\includegraphics[width=0.5\textwidth]{\fig/lab5_es1_scene.png}};
 \end{tikzpicture}
 \end{center}
-    Il parametro ``quality'' indica quanti punti saranno usati dal \frnzplt per
+    Il parametro \texttt{Quality} indica quanti punti saranno usati dal \frnzplt per
     approssimare la curva (o la superficie)
 
 \end{frame}
@@ -99,7 +100,7 @@ Vogliamo rappresentarla con \frnzplt attraverso l'elemento `parametric curve'.
 \begin{frame}
 \frametitle{Esercizio 2 - i}
 La matrice che rappresenta la trasformazione parametrica \`e la seguente:
-\begin{equation}
+\begin{equation*}
 R(\theta) = 
 \begin{bmatrix}
     \mbox{cos}(\theta) & - \mbox{sin}(\theta) & 0 & 0\\
@@ -109,18 +110,18 @@ R(\theta) =
 \end{bmatrix}
 \quad
     \theta \in [0, \pi]
-\end{equation}
+\end{equation*}
 
     Per ottenere la curva dobbiamo moltiplicarla per il vettore che contiene le coordinate del punto: 
     $$
-    c(\theta) = R(\theta) P
+    c(\theta) = R(\theta) \ P
     $$
 \end{frame}
 
 \begin{frame}
 \frametitle{Esercizio 2 - ii}
 Svolgendo i conti troviamo:
-\begin{equation}
+\begin{equation*}
 c(\theta) = 
 \begin{bmatrix}
     \mbox{cos}(\theta) & - \mbox{sin}(\theta) & 0 & 0\\
@@ -142,7 +143,7 @@ c(\theta) =
     1 \\
     1
 \end{bmatrix}
-\end{equation}
+\end{equation*}
 Quindi possiamo scrivere la nostra curva:
 \begin{displaymath}
     c(\theta):
@@ -226,32 +227,66 @@ S =
     0 & 0 & \nicefrac{1}{2} 
 \end{bmatrix}
 \end{equation}
-    Trattandosi di una scalatura, \`e immediato calcolare la curva $\mathcal{G}$:
+    Trattandosi di una scalatura, \`e immediato calcolare la curva $\mathcal{G}$ \\
+    (\`e sufficiente moltiplicare ogni espressione in $x$, $y$ e $z$ per la corrispondente scalatura).
 \begin{displaymath}
     \mathcal{G}(t):
 \begin{cases}
     x = \nicefrac{1}{8} \ t \cos t \\
     y = 0 \\
-    z(t)= \nicefrac{1}{4} \ t \sin t
+    z = \nicefrac{1}{4} \ t \sin t
 \end{cases}
 \quad
     t \in [0, 10 \pi]
 \end{displaymath}
 
-Notiamo che, poich\`e S \`e una trasformazione NON parametrica,
-l'oggetto trasformato \`e rimasto una curva.
+\end{frame}
+
+\begin{frame}
+\frametitle{Esercizio 3 - ii}
+In alternativa, ricaviamo $\mathcal G$ come moltiplicazione di $S$ per $\mathcal C$:
+\begin{displaymath}
+    \mathcal G(t) = S \ \mathcal C(t)
+\end{displaymath}
+
+\begin{displaymath}
+    \mathcal G = 
+\begin{bmatrix}
+    \nicefrac{1}{4} &       0 & 0 & 0\\
+    0  & 1 & 0 & 0 \\ 
+    0 & 0 & \nicefrac{1}{2} & 0 \\
+    0 & 0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+    \nicefrac{1}{2} t \cos t \\
+    0 \\
+    \nicefrac{1}{2} \ t \sin t \\
+    1
+\end{bmatrix}
+ =
+\begin{bmatrix}
+    \nicefrac{1}{8} \ t \cos t \\
+    0 \\
+    \nicefrac{1}{4} \ t \sin t \\
+    1
+\end{bmatrix}
+\end{displaymath}
+
+    \vspace{0.7cm}
+Possiamo notare come in questo esercizio il parametro della curva $\mathcal G$ ``deriva'' dalla curva che stiamo trasformando,
+    mentre nell'esercizio precedente, il parametro ``deriva'' dalla matrice parametrica, non dal punto che abbiamo trasformato.
 \end{frame}
 
 %
 \begin{frame}
-\frametitle{Esercizio 3 - ii}
+\frametitle{Esercizio 3 - iii}
 \begin{center}
 \begin{tikzpicture}
 \node(img1){\includegraphics[width=0.8\textwidth]{\fig/lab5_es3_graph.png}};
 \node(img2) at (img1.south west){\includegraphics[width=0.5\textwidth]{\fig/lab5_es3_scene.png}};
 \end{tikzpicture}
 \end{center}
-    Poich\`e l'intervallo \`e parecchio ampio, si suggerisce di settare il parametro ``quality'' al massimo.
+    Poich\`e l'intervallo \`e parecchio ampio, si suggerisce di settare il parametro \texttt{Quality} al massimo.
 \end{frame}
 
 \begin{frame}
@@ -347,7 +382,7 @@ Questo ci permette di esprimere la posizione della Luna nel sistema di riferimen
 \end{displaymath}
 dove $n =$ numero rivoluzioni della Terra attorno al Sole. \\
 \vspace{0.2cm}
-\textbf{Oss.} Poichè si vuole che la Luna ruoti più velocemente della Terra dev'essere necessariamente $k > 1$. In questo modo per una stessa $t$ la Luna avr\`a spazzato un angolo maggiore.
+\textbf{Oss.} Poich\`e si vuole che la Luna ruoti pi\`u velocemente della Terra dev'essere necessariamente $k > 1$. In questo modo per una stessa $t$ la Luna avr\`a spazzato un angolo maggiore.
 \end{frame}
 
 
